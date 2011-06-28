@@ -1,0 +1,8 @@
+auto: false
+server: false
+permalink: /:year/:month/:title
+pygments: true
+base-url: "/"
+exclude:
+  - readme.md
+category_dir: topics

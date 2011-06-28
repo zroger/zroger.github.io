@@ -1,0 +1,14 @@
+---
+layout: master
+---
+<div class="eyebrow">
+  Topics
+</div>
+
+<h1>{{ page.category }}</h1>
+
+<ul class="post-list">
+{% for post in site.categories[page.category] %}
+  <li>{% include post-teaser.html %}</li>
+{% endfor %}
+</ul>

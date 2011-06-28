@@ -1,0 +1,255 @@
+---
+---
+@link_color: #2C7EC7;
+@text_color: #555;
+@alt_link_color: #C9ED34;
+@stripe_color: #2C7EC7;
+
+/* Typography
+----------------------------------------*/
+body {
+  color: @text_color;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+a, a:visited {
+  color: @link_color;
+  text-decoration: none;
+}
+a:hover, a:active {
+}
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  line-height: 1;
+}
+h1 { font-size: 36px; }
+h2 { font-size: 24px; }
+h3 { font-size: 21px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+
+h1, h2, h3, h4, h5, p, ul, ol, dl {
+  margin: 0 0 24px;
+}
+
+ul p, ul ol, ul ul,
+ol p, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: disc outside;
+  margin-left: 2em;
+}
+ol {
+  list-style: decimal outside;
+  margin-left: 2em;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: solid 5px #ddd;
+  font-style: italic;
+  margin-bottom: 24px;
+  margin-left: 20px;
+  margin-right: 40px;
+  padding: 10px;
+}
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+pre, code, kbd, samp {
+  font-family: "Inconsolata", monospace, sans-serif;
+}
+.highlight {
+  background: #f9f9f9;
+  border: solid 1px #ddd;
+  margin-bottom: 24px;
+  padding: 9px;
+}
+.eyebrow {
+  color: #999;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Site stuff
+----------------------------------------*/
+img {
+  max-width: 100%;
+}
+
+.full-screen-photo {
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Layout
+----------------------------------------*/
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+header {
+  background: #efefef;
+  border-bottom: solid 1px #bbb;
+  border-top: solid 12px #555;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  margin-bottom: 48px;
+
+  .container {
+    position: relative;
+  }
+
+  a.site-name {
+    background: #555;
+    color: #fff;
+    font-size: 36px;
+    font-weight: lighter;
+    line-height: 24px;
+    padding: 24px 20px;
+    position: absolute;
+    top: -12px; left: 10px;
+  }
+
+  a.site-name:hover {
+    color: @alt_link_color;
+  }
+
+  nav {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: right;
+    padding: 12px 0;
+
+    a {
+      margin-left: 12px;
+    }
+  }
+}
+
+ul.post-list,
+ul.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    border-bottom: solid 1px #ddd;
+    display: block;
+    padding: 24px 0;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  li:first-child {
+    padding-top: 0;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+}
+
+footer {
+  border-top: 1px solid #DDDDDD;
+  color: #999999;
+  font-size: 12px;
+  margin-top: 24px;
+  padding-top: 12px;
+}
+
+.left {
+  float: left;
+  text-align: left;
+  width: 49.9%;
+}
+
+.right {
+  float: left;
+  text-align: right;
+  width: 49.9%;
+}
+
+article {
+  .meta {
+    background: #f0f0f0;
+    border: solid 1px #bbb;
+    font-size: 14px;
+    padding: 12px;
+
+    .left, .right {
+      margin-bottom: 12px;
+    }
+
+    p {
+      border-top: solid 1px #bbb;
+      clear: both;
+      margin: 0;
+      padding-top: 12px;
+    }
+  }
+}
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.container_12:after,
+.container_16:after {
+  clear: both;
+}
+
+/*
+The following zoom:1 rule is specifically for IE6 + IE7.
+Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+  zoom: 1;
+}

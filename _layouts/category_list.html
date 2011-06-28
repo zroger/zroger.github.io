@@ -1,0 +1,19 @@
+---
+layout: master
+title: Topics
+---
+<h1>Topics</h1>
+
+<ul class="category-list">
+{% for category in page.categories %}
+  {% capture count %}{{ site.categories[category] | size }}{% endcapture %}
+  <li>
+    <div class="eyebrow">
+      {{ count }} {% if count == '1' %}post{% else %}posts{% endif %}
+    </div>
+    <h2>
+      <a href="{% category_url category %}">{{ category | capitalize }}</a>
+    </h2>
+  </li>
+{% endfor %}
+</ul>

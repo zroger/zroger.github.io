@@ -1,0 +1,27 @@
+---
+layout: master
+---
+<article>
+  <div class='eyebrow'>{{page.date | date: "%B %d, %Y"}}</div>
+  <h1>{{page.title}}</h1>
+
+  <div class='body'>{{ content }}</div>
+
+  <div class="meta">
+    <div class="left">
+      <div class="eyebrow">Previous Post</div>
+      <a href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+    </div>
+
+    <div class="right">
+      <div class="eyebrow">Next Post</div>
+      <a href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+    </div>
+
+    <p>
+      Posted on <a href="{{ site.base-url}}{{ page.date | date: "%Y/%m"}}">{{ page.date | date: "%B %d, %Y"}}</a>
+      in the topic <a href="{% category_url page.category %}">{{ page.category }}</a>.
+    </p>
+  </div>
+      
+</article>

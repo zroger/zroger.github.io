@@ -1,0 +1,27 @@
+---
+layout: html
+---
+  <header>
+    <div class="container">
+      <a class="site-name" href="{{ site.base-url }}">zroger</a>
+
+      <nav>
+        <a href="{{ site.base-url }}">Articles</a>
+        <a href="{{ site.base-url }}topics">Topics</a>
+        <a href="{{ site.base-url }}about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      {% include footer.html %}
+    </div>
+  </footer>
+</div>

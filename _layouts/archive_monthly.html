@@ -1,0 +1,18 @@
+---
+layout: master
+---
+<div class="eyebrow">
+  Archives
+</div>
+
+<h1>{{ page.month | date_to_month }} {{ page.year }}</h1>
+
+<ul class="post-list">
+  {% for d in (1..31) reversed %}
+    {% if page.collated_posts[page.year][page.month][d] %}
+      {% for post in page.collated_posts[page.year][page.month][d] reversed %}
+        <li>{% include post-teaser.html %}</li>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</ul>
