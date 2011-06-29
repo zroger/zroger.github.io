@@ -5,4 +5,5 @@ pygments: true
 base-url: "/"
 exclude:
   - readme.md
+  - vendor
 category_dir: topics
