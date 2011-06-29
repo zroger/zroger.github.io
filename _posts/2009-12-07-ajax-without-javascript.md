@@ -27,7 +27,7 @@ We will be building an example module, which I will call "example". This module 
 The first thing that is needed is a hook_menu() implementation to define two new paths. The first is the page that will hold the link, and the second defines the ajax callback. Take note of the %ctools_js in the second entry. This is how we will determine if the call is being made from an ajax call or not. More on that when we get to the callback code.
 
 <figure>
-  <figcaption>hook_menu from example.module</figcaption>
+  <figcaption>example.module, part 1</figcaption>
 {% highlight php %}
 <?php
 /** 
@@ -53,6 +53,8 @@ function example_menu() {
 
 Now for the main page callback. The only output on this page is a link to the second path that we defined. The link has two things to take note of. First, the path of the link is test/nojs/go. The 'nojs' portion of the path will be replaced with 'ajax' when an ajax call is made. This distinction is how we detect if the callback is being called from an ajax request or not. The second thing to note is that we add a class of 'ctools-use-ajax' to the link. This tells the ajax-responder javascript that this link should be processed by the ajax responder. And finally, we must include the ajax-responder javascript.
 
+<figure>
+  <figcaption>example.module, part 2</figcaption>
 {% highlight php %}
 <?php
 function example_test_main() {
@@ -64,9 +66,12 @@ function example_test_main() {
 }
 ?>
 {% endhighlight %}
+</figure>
 
 Last but not least, the ajax callback. Notice how the function takes a boolean parameter for $js. CTools takes care of turning the strings ('nojs' or 'ajax') into a boolean, so we have a very clean way to determine how to respond. We will be returning the same content, in both conditions, to maintain accessibility for non-javascript enabled browsers (for <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> as well as <abbr title="Search engine optimization">SEO</abbr>).
 
+<figure>
+  <figcaption>example.module, part 3</figcaption>
 {% highlight php %}
 <?php
 function example_test_ajax_callback($js = FALSE) {
@@ -88,6 +93,7 @@ function example_test_ajax_callback($js = FALSE) {
 }
 ?>
 {% endhighlight %}
+</figure>
 
 In the javascript branch of the conditional, we construct an array of command objects. Luckily for us, CTools offers a complementary php function for each javascript command, so creating the commands array is simple. The particular set of commands that we are using will add the output after the link, then remove the link. You can add as many commands as needed. The last thing to do, is to pass the commands array through ctools_ajax_render, which will output the commands array as JSON and exit. From that point on, the ajax-responder javascript on the first page takes over, and executes the commands in the order they are received.
 
