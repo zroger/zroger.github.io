@@ -1,6 +1,6 @@
 auto: false
 server: false
-permalink: /:year/:month/:title
+permalink: /:year/:month/:title.html
 pygments: true
 base-url: "/"
 exclude:
