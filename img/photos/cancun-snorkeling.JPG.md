@@ -1,4 +1,4 @@
 ---
 layout: fullscreen-photo
-photo: cancun-snorkeling.JPG
+photo: cancun-snorkeling.jpg
 ---
