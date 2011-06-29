@@ -1,4 +1,4 @@
 ---
 layout: refresh
-refresh_to_post_id: /2009/04/23/tumblr-api-module
+refresh_to_post_id: /2009/04/tumblr-api-module
 ---
