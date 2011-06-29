@@ -9,6 +9,5 @@ While discussing the news about <a href="http://whitehouse.gov">Whitehouse.gov</
 
 The extension simply puts a Drupal icon in your status bar which is gray when on a site that is thought to not be powered by Drupal, and turns blue when a Drupal site is detected.  This is my first foray into Firefox extension building so be kind.
 
-And here it is for all to enjoy.
-
-## Install the <a title="Install the &quot;Is it Drupal?&quot; Firefox extension" href="/files/isitdrupal.xpi">"Is it Drupal?"</a> Firefox Extension
+### Updated (June 2011)
+I'm no longer offering this as a download, since I don't have the time to properly maintain it and there are several other extensions that do a similar task.

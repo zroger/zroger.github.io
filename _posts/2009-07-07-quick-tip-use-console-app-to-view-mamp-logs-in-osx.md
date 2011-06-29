@@ -12,4 +12,7 @@ I've been using this little tip for so long now that I forgot how to do it, unti
 3. ln -s /Applications/MAMP/logs MAMP
 4. Open console.app and you will now see MAMP in the ~/Library/Logs tree
 
-<img src="http://img.skitch.com/20090707-ems6pbtcy9k6e7bn4m8k2nft9t.jpg" alt="OSX console.app displaying Apache, MySQL and PHP error logs from MAMP" width="601" height="466" />
+<figure>
+  <img src="http://img.skitch.com/20090707-ems6pbtcy9k6e7bn4m8k2nft9t.jpg" alt="OSX console.app displaying Apache, MySQL and PHP error logs from MAMP" />
+  <figcaption>OSX console.app displaying Apache, MySQL and PHP error logs from MAMP</figcaption>
+</figure>

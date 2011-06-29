@@ -11,20 +11,31 @@ So that title may be a little ambitious, but this is how I like to theme CCK fie
 
 I have a multi-value node reference field that I've added to almost every content type on a site, so that any post may contain a hand-crafted list of related topics. The problem lies in that I want something different than the standard CCK nodereference markup. This could easily be done in the node.tpl.php file, but not all content types have this field, and the code would need to be replicated in every content type which has that field.
 
-<img src="http://img.skitch.com/20090617-rqp6dtcrup24gcfwxiipp4mksd.jpg" alt="" width="430" height="430" />
+<figure>
+  <img src="http://img.skitch.com/20090617-rqp6dtcrup24gcfwxiipp4mksd.jpg" alt="" />
+  <figcaption>Typical CCK markup</figcaption>
+</figure>
 
 ## Solution:
 
 What I want to theme is the field container. Not the whole node, not the individual field values, but the group of field values as a piece of any node. Luckily the Theme Developer module came in handy. I noticed that each CCK field is based on content-field.tpl.php, and could use a more specific template to theme an individual field. This works across content types, so theming the field once will work regardless of the content type that the field is attached to.
 
-<img src="http://img.skitch.com/20090617-t68gg6da9rbscei6sfbkf5y8um.jpg" alt="" width="421" height="357" />
+<figure>
+  <img src="http://img.skitch.com/20090617-t68gg6da9rbscei6sfbkf5y8um.jpg" alt="" />
+  <figcaption>Template suggestions for content-field.tpl.php</figcaption>
+</figure>
 
 I started out by copying content-field.tpl.php from cck/theme folder to my theme folder. This file must be in the theme folder, otherwise Drupal will not find any template files derived from it. Then I made a copy of content-field.tpl.php and name d it content-field-field_related_posts.tpl.php, where field_related_posts is the name of the field I am theming.
 
-<img src="http://img.skitch.com/20090617-8idjqugbcs7uwwdiieuubet2fx.jpg" alt="" width="405" height="226" />
+<figure>
+  <img src="http://img.skitch.com/20090617-8idjqugbcs7uwwdiieuubet2fx.jpg" alt="" width="405" height="226" />
+  <figcaption>Theme directory with content-field.tpl.php and overrides.</figcaption>
+</figure>
 
 And now the fun part. The code.
 
+<figure>
+  <figcaption>content-field-field_related_posts.tpl.php</figcaption>
 {% highlight php %}
 <?php
 // $Id: content-field.tpl.php,v 1.1.2.5 2008/11/03 12:46:27 yched Exp $
@@ -80,10 +91,14 @@ And now the fun part. The code.
   }
 ?>
 {% endhighlight %}
+</figure>
 
 There are a couple of variables that I should explain, but as you can see, there is a ton of documentation already in this file, since it was copied from content-field.tpl.php. The first variable used is $field_empty. I don't want anything output if there is nothing in the field, so I wrap the whole thing in an if statement. Then I loop over the $items array. Each of the items in the $items array is itself an array, with an 'empty' index and a 'view' index. Basically, if its not empty, I add the view to a simple array, essentially collapsing the more complicated $items array. Then, I do a switch on the $label_display variable, to determine how to output the new array I've created.
 
-<img src="http://img.skitch.com/20090617-pw469xf6tm828jruisid8f49jr.jpg" alt="" width="430" height="430" />
+<figure>
+  <img src="http://img.skitch.com/20090617-pw469xf6tm828jruisid8f49jr.jpg" alt="" width="430" height="430" />
+  <figcaption>Label options for CCK fields</figcaption>
+</figure>
 
 $label_display hold one of three values, 'above', 'inline' or 'hidden'. This value is chosen on the Display Fields tab of each content type in the Content Type administration section. Since I'm using CCK's built in UI, this field remains tied to the decisions made in the admin interface. For this particular implementation, I am display the items in a Drupal "item_list" when the label display is set to "above" or "hidden", but displaying the items as a comma separated list with an inline label when set to "inline".
 
