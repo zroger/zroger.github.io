@@ -6,4 +6,6 @@ base-url: "/"
 exclude:
   - readme.md
   - vendor
+  - Gemfile
+  - Gemfile.lock
 category_dir: topics
