@@ -20,7 +20,7 @@ We will be building a very simple module with two pages.  The first simply holds
 
 <figure>
   <figcaption>example.module, part 1</figcaption>
-{% highlight php %}
+{% highlight php linenos %}
 <?php
 /**
  * Implementation of hook_menu().
