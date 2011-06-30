@@ -9,3 +9,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
 category_dir: topics
+disqus_shortname: zroger

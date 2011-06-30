@@ -67,7 +67,13 @@ pre, code, kbd, samp {
   background: #f9f9f9;
   border: solid 1px #ddd;
   margin-bottom: 24px;
-  padding: 9px;
+  padding: 0 9px;
+}
+.highlight .lineno {
+  background: #ddd;
+  border-right: solid 3px #bbb;
+  margin-left: -9px;
+  padding: 4px;
 }
 .eyebrow {
   color: #999;
@@ -227,15 +233,94 @@ figure {
 
   .highlight {
     background: #fff;
-    border: solid 1px #ddd;
     margin: 0;
-    padding: 9px;
     text-align: left;
   }
 }
 
 .highlight pre {
   margin: 0;
+}
+
+/* Disqus Commments
+----------------------------------------*/
+#disqus_thread {
+  margin-top: 60px;
+
+  #dsq-sort-by,
+  #dsq-global-toolbar,
+  #dsq-content .dsq-options {
+    display: none;
+  }
+
+  #dsq-content {
+    li.dsq-comment {
+      border-bottom: solid 1px #ddd;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+    }
+
+    .dsq-comment-header {
+      background: none;
+      border: none;
+      border-radius: none;
+      font-size: 16px;
+      padding-left: 0;
+
+      .dsq-comment-header-meta {
+        padding-left: 20px;
+      }
+
+      .dsq-comment-header-meta-wrapper {
+        /* match the img height */
+        height: 32px;
+        padding: 0;
+        margin: 3px 0;
+      }
+
+      .dsq-commenter-name,
+      cite {
+        display: block;
+        font-weight: normal;
+        padding-top: 12px;
+      }
+
+      .dsq-comment-header-time {
+        .eyebrow;
+        padding: 0;
+        position: absolute;
+        top: 0px; left: 0px;
+      }
+    }
+
+    .dsq-comment-body {
+      padding-left: 0;
+    }
+
+    h3 {
+      border-bottom: solid 1px #555;
+      font-size: 24px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+    }
+
+    .dsq-header-avatar a.dsq-avatar {
+      padding: 0;
+    }
+
+    .dsq-header-avatar img,
+    .dsq-comment:hover .dsq-header-avatar a.dsq-avatar img {
+      background: #f5f5f5;
+      border: solid 1px #ddd;
+      border-radius: 0;
+      box-shadow: none;
+      height: 32px;
+      margin: 0;
+      padding: 2px;
+      width: 32px;
+    }
+
+  }
 }
 
 /* Clear Floated Elements
