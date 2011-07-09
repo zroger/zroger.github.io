@@ -1,5 +1,3 @@
----
----
 @link_color: #2C7EC7;
 @text_color: #555;
 @alt_link_color: #C9ED34;
@@ -155,16 +153,25 @@ header {
 ul.post-list,
 ul.category-list {
   list-style: none;
-  margin: 0;
+  margin: 0 -10px;
   padding: 0;
 
   li {
     border-bottom: solid 1px #ddd;
     display: block;
-    padding: 24px 0;
+    padding: 12px 10px;
 
+    img {
+      float: left;
+      margin-right: 12px;
+    }
+
+    .eyebrow {
+      padding-top: 12px;
+    }
     h2 {
       margin: 0;
+      padding-bottom: 12px;
     }
   }
 
@@ -240,6 +247,13 @@ figure {
 
 .highlight pre {
   margin: 0;
+}
+
+.main-photo {
+  margin: 0 -10px;
+}
+.main-photo img {
+  max-width: 100%;
 }
 
 /* Disqus Commments
