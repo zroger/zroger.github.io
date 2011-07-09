@@ -10,3 +10,21 @@ exclude:
   - Gemfile.lock
 category_dir: topics
 disqus_shortname: zroger
+
+mini_magick:
+  tiny:
+    source: img/photos/original
+    destination: img/photos/tiny
+    resize: "36x36^"
+    gravity: "Center"
+    crop: "36x36+0+0"
+  thumbnail:
+    source: img/photos/original
+    destination: img/photos/thumbnail
+    resize: "60x60^"
+    gravity: "Center"
+    crop: "60x60+0+0"
+  content:
+    source: img/photos/original
+    destination: img/photos/content
+    resize: "620"

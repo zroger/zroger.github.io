@@ -6,12 +6,5 @@ photo: cancun-snorkeling.jpg
 comments: true
 ---
 
-<figure class="photo">
-  <a href="{{ site.base-url }}img/photos/{{ page.photo }}.html">
-    <img src="{{ site.base-url }}img/photos/640/{{ page.photo }}">
-  </a>
-
-  <figcaption>
-    Taken while snorkeling off a catamaran in Cancun, Mexico.
-  </figcaption>
-</figure>
+Monique took this picture while snorkeling off a catamaran in Cancun, Mexico,
+with our Olympus 720SW, water-proof camera.

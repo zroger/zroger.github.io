@@ -5,6 +5,12 @@ layout: master
   <div class='eyebrow'>{{page.date | date: "%B %d, %Y"}}</div>
   <h1>{{page.title}}</h1>
 
+  {% if page.photo %}
+    <div class="main-photo">
+      <img src="{{ site.base-url }}img/photos/content/{{ page.photo }}" />
+    </div>
+  {% endif %}
+
   <div class='body'>{{ content }}</div>
 
   <div class="meta">
