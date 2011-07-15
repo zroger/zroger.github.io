@@ -1,0 +1,72 @@
+#section-2{
+  float: left;
+  margin-left: 64px;
+  width: 318px;
+  padding-right: 85px;
+  background: url(i/arrow.right.png) no-repeat bottom right;
+}
+#section-2 .quote{
+  margin-left: 0px;
+  margin-bottom: 0px;
+  width: 300px;
+  display: block;
+}
+
+#main{
+  background: url(i/bg.main.jpg) repeat-y 21px 0px;
+}
+#main .inner{
+  background: url(i/sidebar.detail.jpg) no-repeat 615px bottom;
+}
+
+#photo-p3{
+  margin-left: 38px;
+}
+.section-left{
+  margin-left: 38px;
+}
+#main .section-right{
+  margin-right: 5px;
+}
+#main .bottom{
+  background: url(i/main.bottom.jpg) no-repeat 21px bottom;
+}
+
+#video-replay{
+  position: relative;
+  left: -244px;
+}
+
+#footer{
+  background: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/2008/moran/i/tv.alpha.png', sizingMethod='crop');
+}
+
+.photo span.alpha{
+  display: inline-block;
+}
+.photo span.alpha img{
+/* make the real image fully transparent in IE5.5/Win, so the Alpha image can show through */
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#photo-p8 .alpha{
+  width: 307px;
+  height: 324px;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/2008/moran/i/p8.alpha.png', sizingMethod='crop');
+}
+#photo-p9 .alpha{
+  width: 315px;
+  height: 331px;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/2008/moran/i/p9.alpha.png', sizingMethod='crop');
+}
+#photo-p11 .alpha{
+  width: 319px;
+  height: 336px;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/2008/moran/i/p11.alpha.png', sizingMethod='crop');
+}
+#photo-p13 .alpha{
+  width: 287px;
+  height: 304px;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/2008/moran/i/p13.alpha.png', sizingMethod='crop');
+}

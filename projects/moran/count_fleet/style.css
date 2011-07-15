@@ -1,0 +1,198 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+img{ border: 0; }
+
+body{
+  text-align: center;
+  font-family: georgia, times, serif;
+  font-size: 10px;
+  line-height: 1em;
+  color: #000000;
+  background: #000000;
+}
+
+.page-width{
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  position: relative;
+	clear: both;
+  display: inline-block;
+  background: #e8480a;
+}
+.page-width:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .page-width {
+  height: 1%;
+}
+.page-width {
+  display: block;
+}
+/* End hide from IE-mac */
+
+p{
+  margin: 3px 30px 20px 55px;
+}
+/* both IE6 & IE7 have some margining issues */
+p{
+	*margin-top: 0px;
+	*margin-bottom: 17px;
+}
+a{
+  color: #8e3c02;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+.q{
+  font-size: 44px;
+  line-height: 1.2em;
+  vertical-align: baseline;
+}
+.q2{
+  font-size: 33px;
+  line-height: 1.2em;
+  vertical-align: baseline;
+}
+.light{
+	color: #f8c447;
+}
+.dark{
+	color: #000;
+}
+.bumper{
+	float: right;
+	clear: right;
+	margin: 0 0 0 30px;
+/*	background: #000;
+	opacity: .25; */
+}
+.right .bumper{
+	float: left;
+	clear: left;
+	margin: 0 30px 0 0;
+}
+.right p{
+	margin-right: 75px;
+	margin-left: 30px;
+}	
+.section{
+	clear: both;
+}
+
+#main{
+  background: #e8480a url(i/body.bg.jpg) no-repeat 0 0;
+}
+
+h1{
+  background: transparent;
+  height: 817px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-indent: -9999px;
+}
+.author{
+	display: none;
+}
+
+#footer{
+  color: #5e695e;
+  font-size: 13px;
+	padding: 20px 0;  
+}
+#footer .links{
+  text-align: center;
+  font-family: georgia, times, serif;
+}
+#footer .links a{
+  font-size: 14px;
+  font-weight: bold;
+  color: #e1b209;
+}
+
+#video-replay{
+  width: 320px;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  top: 100px;
+  left: 120px;
+}
+#video{
+	height: 387px;	
+	background: url(i/footer.png) no-repeat right top;
+	position: relative;
+}
+#video a.charts{
+	position: absolute;
+	top: 217px;
+	left: 470px;
+	display: block;
+	height: 32px;
+	width: 180px;
+	text-indent: -9999px;
+}
+
+#section3{
+	margin-top:-55px;
+}	
+#section4 p{
+	margin-left: 18px;
+	margin-right: 505px;
+}
+#section5{
+ margin-top: -245px;
+}	
+#section6{
+	padding-bottom: 130px;
+}
+#section6 p{
+	margin-left: 18px;
+	margin-right: 410px;
+}
+#section7 p{
+	margin-left: 30px;
+	margin-right: 50px;
+}
+#section8 p{
+	margin-left: 30px;
+	margin-right: 635px;
+}
+#section9{
+	width: 290px;
+	float: right;
+	margin-top: -325px;
+}
+#section9 p{
+  margin-left: 0px;
+}
+#section10{
+  padding-top: 625px;
+}
+#section10 p{
+	margin-left: 180px;
+	margin-right: 125px;
+}
+#section11 p{
+	margin-left: 120px;
+	margin-right: 125px;
+}
+#section12{
+  padding-top: 600px;
+}
+#section12 p{
+	margin-left: 120px;
+	margin-right: 125px;
+}

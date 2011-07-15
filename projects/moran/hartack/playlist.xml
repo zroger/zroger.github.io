@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://www.kentuckyderby.com/2008" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss">
+<channel>
+ <title>Bill Hartack - On the Muscle</title>
+ <link>http://kentuckyderby.atthepost.com/2008/moran/hartack/index.html</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Kentucky Derby 83 - 1957</title>
+ <link>http://www.kentuckyderby.com/2008/moran/hartack/index.html</link>
+ <description></description>
+ <media:content url="http://www.kentuckyderby.com/2008/derby_history_videos/1957.flv" type="video/x-flv" />
+</item>
+<item>
+ <title>Kentucky Derby 86 - 1960</title>
+ <link>http://www.kentuckyderby.com/2008/moran/hartack/index.html</link>
+ <description></description>
+ <media:content url="http://www.kentuckyderby.com/2008/derby_history_videos/1960.flv" type="video/x-flv" />
+</item>
+<item>
+ <title>Kentucky Derby 88 - 1962</title>
+ <link>http://www.kentuckyderby.com/2008/moran/hartack/index.html</link>
+ <description></description>
+ <media:content url="http://www.kentuckyderby.com/2008/derby_history_videos/1962.flv" type="video/x-flv" />
+</item>
+<item>
+ <title>Kentucky Derby 90 - 1964</title>
+ <link>http://www.kentuckyderby.com/2008/moran/hartack/index.html</link>
+ <description></description>
+ <media:content url="http://www.kentuckyderby.com/2008/derby_history_videos/1964.flv" type="video/x-flv" />
+</item>
+<item>
+ <title>Kentucky Derby 85 - 1969</title>
+ <link>http://www.kentuckyderby.com/2008/moran/hartack/index.html</link>
+ <description></description>
+ <media:content url="http://www.kentuckyderby.com/2008/derby_history_videos/1969.flv" type="video/x-flv" />
+</item>
+</channel>
+</rss>
