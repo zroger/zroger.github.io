@@ -1,21 +1,31 @@
 ---
 layout: html
 ---
-  <header>
-    <div class="container">
-      <a class="site-name" href="{{ site.base-url }}">zroger</a>
-
+  <header id="page-header" class="container">
+    <div class="six columns">
+      <h1 class="site-name" class="remove-bottom">
+        <a href="{{ site.base-url }}">Roger López</a>
+      </h1>
+    </div>
+    <div class="ten columns">
       <nav>
-        <a href="{{ site.base-url }}">Articles</a>
-        <a href="{{ site.base-url }}topics">Topics</a>
-        <a href="{{ site.base-url }}about">About</a>
+        <ul>
+          <li class="active"><a href="{{ site.base-url }}">Articles</a></li>
+          <li><a href="{{ site.base-url }}topics">Topics</a></li>
+          <li><a href="{{ site.base-url }}about">About</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <div class="content">
-    <div class="container">
+  <div id="main" class="container">
+    <div class="nine columns offset-by-one">
       {{ content }}
+    </div>
+
+    <div class="four columns offset-by-one">
+      <h3>It's a block</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
   </div>
 
