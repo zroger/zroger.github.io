@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 gem "jekyll", "~>0.10"
-gem "jekyll-less", "~>0.0.3"
+gem "jekyll-less", "~>0.0.4"
 gem "jekyll-categories", "0.0.1"
 gem "jekyll-minimagick", "0.0.2"
 gem "RedCloth"
