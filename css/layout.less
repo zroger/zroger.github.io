@@ -86,6 +86,71 @@ nav li.active a {
   margin-bottom: 20px;
 }
 
+.eyebrow {
+  color: #999;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Site stuff
+----------------------------------------*/
+img {
+  max-width: 100%;
+}
+
+.full-screen-photo {
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+ul.post-list,
+ul.category-list {
+  list-style: none;
+  margin: 0 -10px;
+  padding: 0;
+
+  li {
+    border-bottom: solid 1px #ddd;
+    display: block;
+    padding: 20px 0;
+
+    img {
+      float: left;
+      margin-right: 12px;
+    }
+
+    .eyebrow {
+      padding-top: 12px;
+    }
+    h2 {
+      margin: 0;
+      padding-bottom: 12px;
+    }
+  }
+
+  li:first-child {
+    padding-top: 0;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+}
+
 /* #Media Queries
 ================================================== */
 

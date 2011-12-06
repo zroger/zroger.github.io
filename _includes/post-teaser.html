@@ -1,7 +1,9 @@
 {% if post.photo %}
-<a href="{{ post.url }}">
-  <img src="{{ site.base-url }}img/photos/thumbnail/{{post.photo}}" />
-</a>
+<div class="photo">
+  <a href="{{ post.url }}">
+    <img src="{{ site.base-url }}img/photos/thumbnail/{{post.photo}}" />
+  </a>
+</div>
 {% endif %}
 <div class="eyebrow">{{ post.date | date: "%B %d, %Y" }}</div>
 <h2>
