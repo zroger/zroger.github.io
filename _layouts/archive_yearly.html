@@ -7,16 +7,16 @@ layout: master
 
 <h1>{{ page.year }}</h1>
 
-<ul class="post-list">
+<div class="post-list">
   {% for m in (1..12) reversed %}
     {% if page.collated_posts[page.year][m] %}
       {% for d in (1..31) reversed %}
         {% if page.collated_posts[page.year][m][d] %}
           {% for post in page.collated_posts[page.year][m][d] reversed %}
-            <li>{% include post-teaser.html %}</li>
+            {% include article.html %}
           {% endfor %}
         {% endif %}
       {% endfor %}
     {% endif %}
   {% endfor %}
-</ul>
+</div>

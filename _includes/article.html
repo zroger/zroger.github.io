@@ -1,0 +1,34 @@
+{% if page.url != post.url %}
+  {% assign context = 'teaser' %}
+{% endif %}  
+<article class="offset-by-three" itemscope itemtype="http://schema.org/BlogPosting">
+  <h2 itemprop="name">
+    <a href="{{ post.url }}" itemprop="url">{{post.title}}</a>
+  </h2>
+  
+  <aside class="post-info">
+    <time itemprop="datePublished" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%b %e, %Y" }}</time>
+    <div class="keywords">
+      <a href="{% category_url post.category %}">{{ post.category }}</a>{% if post.tags.size > 0 %},{% endif %}
+      {% for tag in post.tags %}
+        <a href="{% category_url tag %}">{{ tag }}</a>{% if forloop.rindex0 > 0 %},{% endif %}
+      {% endfor %}
+    </div>
+  </aside>
+
+  <div class="content" itemprop="description">
+    {% if post.photo %}
+    <div class="photo">
+      <a href="{{ post.url }}">
+        <img src="{{ site.base-url }}img/photos/original/{{post.photo}}" />
+      </a>
+    </div>
+    {% endif %}
+
+    {% if context == 'teaser' %}
+      {{ post.content | preview }}
+    {% else %}
+      {{ content }}
+    {% endif %}  
+  </div>
+</article>

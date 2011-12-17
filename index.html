@@ -2,8 +2,8 @@
 layout: master
 description: Musings about web technology, food and cocktails by Roger López.
 ---
-<ul class="post-list">
+<div class="post-list">
 {% for post in site.posts %}
-  <li>{% include post-teaser.html %}</li>
+  {% include article.html %}
 {% endfor %}
-</ul>
+</div>

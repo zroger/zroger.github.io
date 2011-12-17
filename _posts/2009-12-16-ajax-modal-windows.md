@@ -12,6 +12,8 @@ disqus_id: node/31
 
 Last week I wrote about the awesomeness that is the <a href="/2009/12/ajax-without-javascript">CTools ajax framework</a>.  If you're anything like me, your mind immediately started racing about all the cool possibilities this opens up.  One of those cool possibilities is yet another hidden <a href="http://drupal.org/project/ctools" title="Chaos Tools project page on Drupal.org">CTools</a> gem, the modal framework.  If you've ever used <a href="http://drupal.org/project/panels" title="Panels project page on Drupal.org">panels</a>, then you've seen CTools modals in action.  In this post, I'll show you how to use modals, in the same way that panels does.
 
+<!-- break -->
+
 ## First things first...
 
 If you missed my last post, chances are that this one will not make any sense.  I highly suggest <a href="/node/30">reading it before continuing with this one</a>.

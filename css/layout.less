@@ -25,19 +25,46 @@
 
 /* #Page Styles
 ================================================== */
-@link_color: #16479E;
+/* @link_color: #16479E; */
+
+@text_color: #424242;
+@link_color: #FF9900;
+@alt_color: #3299BB;
+
+.pt-sans {
+  font-family: "PT Sans", arial, sans-serif;
+}
+.pt-serif {
+  font-family: "PT Serif", times, sans-serif;
+}
 
 html, body {
-  background: #f8f8f8;
-  font-size: 16px;
-  line-height: 1.5;
+  background: #E9E9E9;
 }
 body {
   border-top: solid 10px #000;
+  color: @text_color;
+  .pt-serif;
+}
+a, a:link, a:visited {
+  color: @alt_color;
+}
+a:hover {
+  color: @link_color;
 }
 
 header.container {
   margin-top: 40px;
+}
+
+footer .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #777;
+  a { 
+    color: #777; 
+  }
 }
 
 h1.site-name a {
@@ -58,26 +85,26 @@ nav ul {
 nav li {
   display: inline;
   padding: 0 10px;
-  vertical-align: bottom;
 }
 nav li:last-child {
   padding-right: 0;
 }
 
 nav li a {
-  color: #000;
   text-decoration: none;
+  vertical-align: bottom;
 }
 
 nav li.active a {
-  color: @link_color;
+  color: @text_color;
+  border-bottom: solid 3px @text_color;
 }
 
 #main {
   padding-top: 40px;
   padding-bottom: 40px;
   background: #fff;
-  border: solid 2px #e5e5e5;
+  box-shadow: 2px 4px 10px #BBBBBB
 }
 
 .page-title {
@@ -92,6 +119,52 @@ nav li.active a {
   letter-spacing: 1px;
   line-height: 1;
   text-transform: uppercase;
+}
+
+article {
+  h2 {
+    .pt-sans;
+    margin-bottom: 0;
+    a, a:link, a:visited {
+      color: @text_color;
+      text-decoration: none;
+    }
+    a:hover {
+      color: @link_color;
+    }
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+
+  aside {
+    color: #999;
+    margin-left: -180px;
+    float: left;
+    width: 160px;
+  }
+
+  .post-info {
+    margin-top: 20px;
+    time {
+      .pt-sans;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .keywords {
+      .pt-sans;
+      color: #999;
+      display: block;
+      a {
+        color: #999;
+        font-size: 13px;
+      }
+    }
+  }
 }
 
 /* Site stuff
@@ -120,26 +193,12 @@ img {
 ul.post-list,
 ul.category-list {
   list-style: none;
-  margin: 0 -10px;
   padding: 0;
 
   li {
     border-bottom: solid 1px #ddd;
     display: block;
     padding: 20px 0;
-
-    img {
-      float: left;
-      margin-right: 12px;
-    }
-
-    .eyebrow {
-      padding-top: 12px;
-    }
-    h2 {
-      margin: 0;
-      padding-bottom: 12px;
-    }
   }
 
   li:first-child {
@@ -147,6 +206,21 @@ ul.category-list {
   }
 
   li:last-child {
+    border-bottom: none;
+  }
+}
+
+div.post-list {
+  article {
+    border-bottom: solid 1px #ddd;
+    padding: 20px 0;
+  }
+
+  article:first-child {
+    padding-top: 0;
+  }
+
+  article:last-child {
     border-bottom: none;
   }
 }
@@ -166,14 +240,22 @@ ul.category-list {
 	    margin-top: 20px;
 	  }
 	  h1.site-name {
-	    margin-bottom: 0;
+	    margin-bottom: 10px;
 	    text-align: center;
 	  }
-	  nav ul {
-      float: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+	  header nav {
+	    line-height: 36px;
+	    margin-bottom: 5px;
+      ul {
+        float: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border-top: solid 1px #bbb;
+      }
+      li a {
+        vertical-align: middle;
+      }
     }
 	  #main {
 	    border-left: 0;
@@ -185,6 +267,31 @@ ul.category-list {
 	    display: block;
 	    float: none;
 	    width: 420px;
+    }
+    
+    article {
+      h2 {
+        margin-bottom: 0;
+      }
+      aside {
+        float: none;
+        width: auto;
+        margin-left: 0;
+
+        &.post-info {
+          margin-top: 0;
+          time {
+            display: inline;
+            &:after {
+              content: " • ";
+              word-spacing: 5px;
+            }
+          }
+          .keywords {
+            display: inline;
+          }
+        }
+      }
     }
 	}
 
