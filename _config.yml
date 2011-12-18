@@ -12,19 +12,19 @@ category_dir: topics
 disqus_shortname: zroger
 
 mini_magick:
-  tiny:
-    source: img/photos/original
-    destination: img/photos/tiny
-    resize: "36x36^"
-    gravity: "Center"
-    crop: "36x36+0+0"
-  thumbnail:
-    source: img/photos/original
-    destination: img/photos/thumbnail
-    resize: "60x60^"
-    gravity: "Center"
-    crop: "60x60+0+0"
   content:
     source: img/photos/original
     destination: img/photos/content
-    resize: "620"
+    resize: "640"
+  tablet:
+    source: img/photos/original
+    destination: img/photos/tablet
+    resize: "508"
+  mobile_landscape:
+    source: img/photos/original
+    destination: img/photos/mobile_landscape
+    resize: "420"
+  mobile_portrait:
+    source: img/photos/original
+    destination: img/photos/mobile_landscape
+    resize: "300"
