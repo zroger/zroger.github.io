@@ -1,0 +1,43 @@
+---
+layout: master
+description: Blog Archives
+---
+
+<div class="item-list">
+  <h3>Recent Articles</h3>
+  <ul>
+  {% for post in site.posts limit:5 %}
+    <li>
+      <a href="{{ post.url }}" itemprop="url">{{post.title}}</a>
+      <time class="detail" itemprop="datePublished" datetime="{{ post.date | date: "%Y-%m-%d" }}">
+        {{ post.date | date: "%b %e, %Y" }}
+      </time>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="item-list seven columns alpha">
+  <h3>Categories</h3>
+  <ul>
+  {% for category in page.categories %}
+    <li>
+      <span class="detail">({{ site.categories[category] | size }})</span>
+      <a href="{% category_url category %}">{{ category | capitalize }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="item-list seven columns omega">
+  <h3>Past Articles</h3>
+  <pre>
+    {{ page.collated_posts[2011][5][29] }}
+  </pre>
+  
+  <ul>
+  {% for month in page.months %}
+    <li><pre>{{ month }}</pre></li>
+  {% endfor %}
+  </ul>
+</div>
