@@ -256,13 +256,25 @@ div.post-list {
 
     a {
       display: block;
-      padding: 10px 5px;
+      padding: 0 5px;
       text-decoration: none;
     }
     .detail {
       position: absolute;
-      top: 10px;
+      top: 0px;
       right: 5px;
+    }
+  }
+  
+  &.large {
+    li {
+      font-size: 21px;
+      a {
+        padding: 10px 5px;
+      }
+      .detail {
+        top: 10px;
+      }
     }
   }
 }
