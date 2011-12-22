@@ -31,13 +31,12 @@ description: Blog Archives
 
 <div class="item-list seven columns omega">
   <h3>Past Articles</h3>
-  <pre>
-    {{ page.collated_posts[2011][5][29] }}
-  </pre>
-  
   <ul>
-  {% for month in page.months %}
-    <li><pre>{{ month }}</pre></li>
+  {% for data in page.post_counts_by_month %}
+    <li>
+      <span class="detail">({{ data.count }})</span>
+      <a href="/{{ data.date | date: "%Y/%m" }}">{{ data.date | date: "%b %Y" }}</a>
+    </li>
   {% endfor %}
   </ul>
 </div>

@@ -1,17 +1,13 @@
 ---
 layout: html
 ---
-  <header id="page-header" class="container">
-    <div class="six columns">
-      <h1 class="site-name" class="remove-bottom">
-        <a href="{{ site.base-url }}">Roger López</a>
-      </h1>
-    </div>
-    <div class="ten columns">
+  <header id="page-header">
+    <div class="container">
+      <a class="site-name" href="{{ site.base-url }}">Roger López</a>
+      <span class="slogan">thoughts on life and code</span>
       <nav>
         <ul>
-          <li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}">Articles</a></li>
-          <li{% if page.url == "topics/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}topics">Topics</a></li>
+          <li{% if page.url == "archives/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}archives">Archives</a></li>
           <li{% if page.url == "about/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}about">About</a></li>
         </ul>
       </nav>

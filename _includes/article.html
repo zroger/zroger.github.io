@@ -1,12 +1,16 @@
 {% if page.url != post.url %}
   {% assign context = 'teaser' %}
 {% endif %}  
-<article class="offset-by-three" itemscope itemtype="http://schema.org/BlogPosting">
-  <h2 itemprop="name">
-    <a href="{{ post.url }}" itemprop="url">{{post.title}}</a>
-  </h2>
+<article itemscope itemtype="http://schema.org/BlogPosting" class="clearfix">
+  {% if context == 'teaser' %}
+    <h2 itemprop="name">
+      <a href="{{ post.url }}" itemprop="url">{{post.title}}</a>
+    </h2>
+  {% else %}
+    <h1 itemprop="name">{{post.title}}</h1>
+  {% endif %}  
   
-  <aside class="post-info">
+  <aside class="post-info three columns alpha">
     <time itemprop="datePublished" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%b %e, %Y" }}</time>
     <div class="keywords">
       <a href="{% category_url post.category %}">{{ post.category }}</a>{% if post.tags.size > 0 %},{% endif %}
@@ -16,7 +20,7 @@
     </div>
   </aside>
 
-  <div class="content" itemprop="description">
+  <div class="content eleven columns omega" itemprop="description">
     {% if post.photo %}
     <div class="photo">
       <a href="{{ post.url }}">
