@@ -2,8 +2,8 @@
 layout: post
 title: Chicken and Veggies
 category: recipes
-comments: true
-published: false
+comments: false
+published: true
 ---
 
 I just threw this one together, and it turned out pretty good.
@@ -26,3 +26,4 @@ with the diced tomatoes, carrots and potatoes.  Season with salt and pepper,
 and whatever herbs you have on hand.  I used thyme.  Let it simmer, covered for
 about 15-20 minutes.  Add some chopped olives a couple of minutes before it's
 done.
+<!-- break -->

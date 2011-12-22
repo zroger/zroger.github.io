@@ -2,8 +2,8 @@
 layout: post
 title: Minimalist Blogging
 category: development
-comments: true
-published: false
+comments: false
+published: true
 ---
 
 My last blog post was on February 4, 2010, almost a year and a half ago.  It's
@@ -18,6 +18,7 @@ terminal.  Most of the time this is some sort of development or documentation.
 When I'm finished, I save the file and commit to version control.  This is very
 comfortable for me.  So why should blogging be any different?
 
+<!-- break -->
 So I've spent a little free time over the last couple of weekends migrating my
 blog from Drupal to Jekyll.  "Jekyll is a blog-aware, static site generator in 
 Ruby", as stated on the Jekyll project page.  How is this better for me as a 
