@@ -3,8 +3,8 @@ layout: post
 title: Dialog API
 created: 1265249844
 disqus_id: node/32
-category: drupal
-tags:
+categories: 
+  - drupal
   - featured
 ---
 I've been hard at work lately on my new pet project, the 

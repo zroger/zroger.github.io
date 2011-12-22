@@ -3,8 +3,8 @@ layout: post
 title: Worldwide Drupal Happy Hour
 created: 1265320637
 disqus_id: node/33
-category: drupal
-tags:
+categories: 
+  - drupal
   - nyc
 ---
 Since April of last year, I've been organizing the 
