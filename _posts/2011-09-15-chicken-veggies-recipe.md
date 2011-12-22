@@ -8,8 +8,10 @@ published: true
 
 I just threw this one together, and it turned out pretty good.
 
-Ingredients:
 
+<div class="item-list" markdown="1">
+### Ingredients:
+  
 - Boneless, skinless chicken thighs
 - 4 Roma tomatoes
 - 1 yellow onion
@@ -18,6 +20,8 @@ Ingredients:
 - 1 large carrot
 - 2 yukon gold potatoes
 - Marinated, pitted olives
+
+</div>
 
 Season the chicken with salt and pepper, then brown on both sides in a touch of
 oil.  Remove the chicken and set aside.  Sweat the onions, peppers and garlic
