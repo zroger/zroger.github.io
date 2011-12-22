@@ -20,7 +20,7 @@
   </aside>
 
   <div class="content eleven columns omega" itemprop="description">
-    {% if post.photo %}
+    {% if post.photo and context == 'teaser' %}
     <div class="photo">
       <a href="{{ post.url }}">
         <img src="{{ site.base-url }}img/photos/content/{{post.photo}}" />

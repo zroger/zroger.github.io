@@ -15,11 +15,11 @@ mini_magick:
   content:
     source: img/photos/original
     destination: img/photos/content
-    resize: "640"
+    resize: "820"
   tablet:
     source: img/photos/original
     destination: img/photos/tablet
-    resize: "508"
+    resize: "652"
   mobile_landscape:
     source: img/photos/original
     destination: img/photos/mobile_landscape
