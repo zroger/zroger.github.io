@@ -30,6 +30,7 @@
 
     {% if context == 'teaser' %}
       {{ post.content | preview }}
+      <a href="{{ post.url }}">Continue Reading &raquo;</a>
     {% else %}
       {{ content }}
     {% endif %}  
