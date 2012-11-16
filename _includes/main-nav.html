@@ -1,0 +1,16 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">{{ site.title }}</a>
+      <ul class="nav pull-right">
+        <li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}">Articles</a></li>
+        <li{% if page.url == "topics/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}topics">Topics</a></li>
+        <li{% if page.url == "about/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}about">About</a></li>
+        {% if site.server %}
+        <li><a href="#debugModal" data-toggle="modal">
+          <i class="icon-eye-open"></i> Inspect</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

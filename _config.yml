@@ -3,6 +3,8 @@ server: false
 permalink: /:year/:month/:title.html
 pygments: true
 base-url: "/"
+baseurl: "/"
+title: "Roger López"
 exclude:
   - readme.md
   - vendor

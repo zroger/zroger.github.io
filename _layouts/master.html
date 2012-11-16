@@ -2,30 +2,25 @@
 layout: html
 ---
   <header id="page-header" class="container">
-    <div class="six columns">
-      <h1 class="site-name" class="remove-bottom">
-        <a href="{{ site.base-url }}">Roger López</a>
-      </h1>
-    </div>
-    <div class="ten columns">
-      <nav>
-        <ul>
-          <li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}">Articles</a></li>
-          <li{% if page.url == "topics/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}topics">Topics</a></li>
-          <li{% if page.url == "about/index.html" %} class="active"{% endif %}><a href="{{ site.base-url }}about">About</a></li>
-        </ul>
-      </nav>
-    </div>
+    {% include main-nav.html %}
   </header>
-  
-  <div id="main" class="container">
-    <div class="fourteen columns offset-by-one">
-      {{ content }}
-    </div>
-  </div>
 
-  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        {{ content }}
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <footer id="pageFooter">
     <div class="container">
       {% include footer.html %}
-    </div>
+
+      <p>Generated on {{ site.time | date_to_long_string }}</p>
+    </div> <!-- /container -->
   </footer>
+
+  {% if site.server %}
+    {% include debug-modal.html %}
+  {% endif %}

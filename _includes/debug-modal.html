@@ -1,0 +1,13 @@
+<!-- Modal -->
+<div id="debugModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="debugModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="debugModalLabel">Jekyll objects</h3>
+  </div>
+  <div class="modal-body">
+    <h3>site</h3>
+    {{ site | debug }}
+    <h3>page</h3>
+    {{ page | debug }}
+  </div>
+</div>
