@@ -1,4 +1,4 @@
-module DrupalRake
+module Zroger
   module Jekyll
     # Adds some extra filters used during the category creation process.
     module Filters
@@ -17,4 +17,4 @@ module DrupalRake
   end
 end
 
-Liquid::Template.register_filter(DrupalRake::Jekyll::Filters)
+Liquid::Template.register_filter(Zroger::Jekyll::Filters)

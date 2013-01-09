@@ -1,0 +1,22 @@
+---
+layout: html
+---
+  <header id="page-header" class="container">
+    {% include main-nav.html %}
+  </header>
+
+  <div class="container" id="resume">
+    <div class="row">
+      <div class="span12">
+        {{ content }}
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <footer id="pageFooter">
+    <div class="container">
+      {% include footer.html %}
+
+      <p>Generated on {{ site.time | date_to_long_string }}</p>
+    </div> <!-- /container -->
+  </footer>

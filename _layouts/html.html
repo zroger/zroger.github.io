@@ -1,45 +1,13 @@
-<head id="www-zroger-com">
-  <meta charset="utf-8">
-  <title>zroger{% if page.title %} | {{ page.title}}{% endif %}</title>
-  <meta name="title" content="{{ page.title }}">
-  <meta name="description" content="{{ page.description }}">
-  <meta name="author" content="Roger López">
-  <meta name="Copyright" content="Copyright Roger López 2011. All Rights Reserved.">
+<!DOCTYPE html>
+<html lang="en" id="www-zroger-com">
+  <head>
+  <head>
+    {% include html/head.html %}
+  </head>
+  <body>
+    {{ content }}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{{ site.baseurl }}assets/css/all.css" rel="stylesheet">
-
-  <link rel="shortcut icon" href="{{ site.base-url }}img/favicon.png">
-  <link rel="apple-touch-icon" href="{{ site.base-url }}img/apple-touch-icon.png">
-
-{% comment %}
-  <!-- TODO: touch icon sizes -->
-  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.base-url }}img/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.base-url }}img/images/apple-touch-icon-114x114.png">
-{% endcomment %}
-
-</head>
-<body>
-
-{{ content }}
-
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="{{ site.baseurl }}assets/js/all.js"></script>
-
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-1082965-6']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-  <!-- Mixpanel -->
-  <script type="text/javascript">var mpq=[];mpq.push(["init","09d3cfe9884f79c3aa4988b784d7d928"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><!-- End Mixpanel        -->
-
-</body>
+    {% include html/javascript.html %}
+    {% include html/analytics.html %}
+  </body>
 </html>

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Snorkeling in Cancun
-category: photos
+category: blog
+tags: photos
 photo: cancun-snorkeling.jpg
 comments: true
 ---

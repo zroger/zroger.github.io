@@ -1,6 +1,7 @@
 ---
 layout: master
 title: About this site
+permalink: about/site.html
 ---
 
 <div class="eyebrow">Behind the curtain</div>
@@ -29,7 +30,7 @@ This site is not a Drupal site.  Why not, you ask?  Well, here goes.
   Jekyll has a very simple plugin scheme.  I've borrowed and modified several
   from Jose.
 * [__LessCSS__](http://lesscss.org/) <br />
-  Less CSS makes writing CSS much more enjoyable.  I am using the Less 
-  [gem](http://rubygems.org/gems/less) along with a Jekyll converter.  The 
+  Less CSS makes writing CSS much more enjoyable.  I am using the Less
+  [gem](http://rubygems.org/gems/less) along with a Jekyll converter.  The
   converter was first found [here](https://gist.github.com/639920) and then
   modified to work with the current version of the gem (2.0.5).

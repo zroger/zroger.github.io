@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: Theming cck fields, the "right way"
 created: 1245202455
 disqus_id: node/25
-category: drupal
+category: blog
+tags: drupal
 ---
 So that title may be a little ambitious, but this is how I like to theme CCK fields, and (at least in my mind) its the most flexible and Drupal-like way.
 
@@ -34,10 +35,8 @@ I started out by copying content-field.tpl.php from cck/theme folder to my theme
 
 And now the fun part. The code.
 
-<figure>
-  <figcaption>content-field-field_related_posts.tpl.php</figcaption>
-{% highlight php %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
+&lt;?php
 // $Id: content-field.tpl.php,v 1.1.2.5 2008/11/03 12:46:27 yched Exp $
 
 /**
@@ -72,26 +71,25 @@ And now the fun part. The code.
         $list_items[] = $item['view'];
       }
     }
-    
+
     switch ($label_display) {
       case 'above':
         print theme('item_list', $list_items, t($label));
         break;
-        
+
       case 'inline':
-        print '<div><strong>'. t($label) .':</strong> '. join(', ', $list_items) .'</div>';
+        print '&lt;div>&lt;strong>'. t($label) .':&lt;/strong> '. join(', ', $list_items) .'&lt;/div>';
         break;
-        
+
       case 'hidden':
       default:
         print theme('item_list', $list_items);
         break;
-        
+
     }
   }
-?>
-{% endhighlight %}
-</figure>
+</code></pre>
+<div class="caption">content-field-field_related_posts.tpl.php</div>
 
 There are a couple of variables that I should explain, but as you can see, there is a ton of documentation already in this file, since it was copied from content-field.tpl.php. The first variable used is $field_empty. I don't want anything output if there is nothing in the field, so I wrap the whole thing in an if statement. Then I loop over the $items array. Each of the items in the $items array is itself an array, with an 'empty' index and a 'view' index. Basically, if its not empty, I add the view to a simple array, essentially collapsing the more complicated $items array. Then, I do a switch on the $label_display variable, to determine how to output the new array I've created.
 

@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: theme_username woes
 created: 1214865660
 disqus_id: node/2
-category: drupal
+category: blog
+tags: drupal
 ---
 I got an email the other day informing me that a blog author on a site I had build could not post comments on his own blog. Authenticated users were not having the same problem, just the blog author. So using devel, I switched to his user account and tried it myself.
 
@@ -13,8 +14,7 @@ So I first dove into the access controls to make sure there wasn't something obv
 
 The problem starts with this bit of code in comment_form():
 
-{% highlight php %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
 function comment_form($edit, $title = NULL) {
   global $user;
   ...
@@ -28,13 +28,11 @@ function comment_form($edit, $title = NULL) {
       $form['author'] = array('#type' => 'value', '#value' => $user->name);
     }
   }
-?>
-{% endhighlight %}
+</code></pre>
 
 In my theme I had overridden theme_username to make use of information in the user profile created by bio.module.
 
-{% highlight php %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
 function phptemplate_username($object) {
   if ($object->uid && $object->name) {
     if($nid = bio_for_user($object->uid)){
@@ -50,33 +48,25 @@ function phptemplate_username($object) {
       $name = $object->name;
     }
     ...
-?>
-{% endhighlight %}
+  }
+}
+</code></pre>
 
 Only the 4 lines at the top of the function differ from the standard theme_username() function. From what I have seen, this is a pretty standard way to display a profile field (in this case, a bio node title). By simply swapping out the name property with the text that I want, the rest of the function does the rest of the work. And since the $object variable isn't specified to be passed by reference, overwriting the name property won't affect anything else... or so I thought.
 
 The problem lies in the way that php handles global variables. When a variable is declared with the global keyword, it is a reference that you are using. The following are functionally equivalent:
 
-{% highlight php %}
-<?php
-  global $user;
-?>
-{% endhighlight %}
+<pre class="prettyprint linenums"><code class="language-php">global $user;</code></pre>
 
 and
 
-{% highlight php %}
-<?php
-  $user = & $GLOBALS['user'];
-?>
-{% endhighlight %}
+<pre class="prettyprint linenums"><code class="language-php">$user = &amp; $GLOBALS['user'];</code></pre>
 
 So in comment_form(), the call to theme('username', $user) is passing a reference to the global $user object, which means that any changes made to the object in the function take effect in the global scope.
 
 The solution? Simply rewrite phptemplate_username to use a local variable to store the name.
 
-{% highlight php %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
 function phptemplate_username($object) {
   if ($object->uid && $object->name) {
     if($nid = bio_for_user($object->uid)){
@@ -86,7 +76,7 @@ function phptemplate_username($object) {
     else {
       $name = $object->name;
     }
-   
+
     // Shorten the name when it is too long or it will break many tables.
     if (drupal_strlen($name) > 20) {
       $name = drupal_substr($name, 0, 15) .'...';
@@ -99,5 +89,5 @@ function phptemplate_username($object) {
     }
   }
   ...
-?>
-{% endhighlight %}
+}
+</code></pre>

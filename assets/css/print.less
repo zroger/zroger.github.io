@@ -1,0 +1,34 @@
+// Core variables and mixins
+@import "_includes/less/variables.less"; // Custom variables.
+@import "_includes/bootstrap/less/mixins.less";
+
+body {
+  font-size: 10pt;
+  padding-top: 0;
+}
+#page-header,
+#pageFooter {
+  display: none;
+}
+
+a.print-href:link:after, a.print-href:visited:after {
+  content:" [" attr(href) "] ";
+}
+
+@media print {
+  // Fixed grid for print. 7.5" * 72dpi = 612pt
+  // 612pt / 12 cols = 51pts per column, rounded down to 50pts to be extra safe.
+  #grid > .core(34pt, 16pt);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth768, @fluidGridGutterWidth768);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth768, @gridGutterWidth768);
+}
+
+.resume-section {
+  .employer-project {
+    page-break-inside : avoid;
+  }
+}

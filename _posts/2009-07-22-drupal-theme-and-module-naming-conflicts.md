@@ -6,7 +6,8 @@ categories:
   - drupal
   - theming
 disqus_id: node/28
-category: drupal
+category: blog
+tags: drupal
 ---
 
 Andrew was having a problem earlier today with a theme's preprocess function not being called in the order he expected.  In particular, this function was a THEMENAME_preprocess_node() function.  The odd thing was, that when he looked at the theme registry using the handy devel module, the order of preprocess functions was:

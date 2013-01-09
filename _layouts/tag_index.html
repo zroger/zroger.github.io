@@ -1,0 +1,14 @@
+---
+layout: master
+---
+<div class="eyebrow">
+  Tags
+</div>
+
+<h1>{{ page.tag }}</h1>
+
+<div class="post-list">
+{% for post in site.tags[page.tag] %}
+  {% include article.html %}
+{% endfor %}
+</div>

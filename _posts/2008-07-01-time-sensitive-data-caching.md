@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: Time sensitive data caching
 created: 1214970649
 disqus_id: node/3
-category: drupal
+category: blog
+tags: drupal
 ---
 I've been working on this rather large project that must make several REST based web service calls for each page generation. Each call can be cached for a different amount of time, ranging anywhere from 1 minute to 1 hour depending on the method being called. So I set out to make sure that the results of all of these calls were being cached for the appropriate amount of time.
 

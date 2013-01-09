@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ajax modal windows, the easy way
-category: drupal
+category: blog
 tags:
   - ajax
   - ctools
@@ -20,14 +20,11 @@ If you missed my last post, chances are that this one will not make any sense.  
 
 We will be building a very simple module with two pages.  The first simply holds the link to the modal window, the second is the page that will be displayed in the modal.  Lets start with some basic code to set up our test module.  This is almost identical to the ajax module we built last week.  The biggest difference here, is that the class on the link has been changed to 'ctools-use-modal' and we are adding the javascript using ctools_modal_add_js().
 
-<figure>
-  <figcaption>example.module, part 1</figcaption>
-{% highlight php linenos %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
 /**
  * Implementation of hook_menu().
  */
-function example_menu() {  
+function example_menu() {
   $items = array();
   $items['test'] = array(
     'title' => 'Ajax Test',
@@ -55,18 +52,13 @@ function example_test_main() {
 
   return $output;
 }
-?>
-{% endhighlight %}
-</figure>
+</code></pre>
 
 All that is left is to define the modal callback.  Since we are using the %ctools_js wildcard, this same callback will be responsible for the content in both modal and non-modal states.  Remember that the %ctools_js wildcard will be translated to a boolean value in which TRUE signals that we are in a javascript context.
 
-<figure>
-  <figcaption>example.module, part 2</figcaption>
-{% highlight php %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
 function example_test_modal_callback($js = FALSE) {
-  $output = t('<p>Lorem ipsum dolor sit amet...</p>');
+  $output = t('&lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;');
   $title = t('Modal example');
   if ($js) {
     ctools_include('ajax');
@@ -79,9 +71,7 @@ function example_test_modal_callback($js = FALSE) {
     return $output;
   }
 }
-?>
-{% endhighlight %}
-</figure>
+</code></pre>
 
 The code above is about as simple as it gets with modal windows.  It simply outputs some text and a title in a modal window.  The modal library provides a nice utility function for this, ctools_modal_render().  The function builds the necessary ajax command object and passes it to the browser using ctools_ajax_render().
 
@@ -89,10 +79,7 @@ But now for something not so trivial.  Arguably the best use case for modal wind
 
 One thing I forgot to mention, is that ctools_modal_form_wrapper() expects you to pass in a form_state array.  drupal_get_form() allows you to pass in additional arguments after the form id, but the ctools form functions expect all arguments to be passed through the form_state array.  In the case of modal forms, the form_state must contain at least an 'ajax' and a 'title' element.
 
-<figure>
-  <figcaption>example.module, part 3</figcaption>
-{% highlight php %}
-<?php
+<pre class="prettyprint linenums"><code class="language-php">
 function example_test_modal_callback($js = FALSE) {
   if ($js) {
     ctools_include('ajax');
@@ -112,9 +99,7 @@ function example_test_modal_callback($js = FALSE) {
     return drupal_get_form('user_login');
   }
 }
-?>
-{% endhighlight %}
-</figure>
+</code></pre>
 
 Hopefully, I've explained enough so that you can understand what is going on in the above function.
 

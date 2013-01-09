@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Chicken and Veggies
-category: recipes
+category: blog
+tags: recipes
 comments: true
 published: false
 ---

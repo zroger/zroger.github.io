@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: DrupalCamp NYC Notes
 created: 1235861033
 disqus_id: node/16
-category: drupal
+category: blog
+tags: drupal
 ---
 I just gave 2 talks at Drupal Camp NYC and wanted to make sure to put some links up for people to follow.
 

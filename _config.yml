@@ -1,23 +1,31 @@
 auto: false
 server: false
 permalink: /:year/:month/:title.html
-pygments: true
+pygments: false
 base-url: "/"
 baseurl: "/"
 title: "Roger López"
 exclude:
   - readme.md
-  - vendor
   - Gemfile
   - Gemfile.lock
+  - assets/css/lib
+  - bin
 category_dir: topics
+tag_dir: tags
 disqus_shortname: zroger
 
 mini_magick:
+  teaser:
+    source: img/photos/original
+    destination: img/photos/teaser
+    resize: "724"
+    gravity: "Center"
+    extent: "724x320"
   content:
     source: img/photos/original
     destination: img/photos/content
-    resize: "640"
+    resize: "724"
   tablet:
     source: img/photos/original
     destination: img/photos/tablet

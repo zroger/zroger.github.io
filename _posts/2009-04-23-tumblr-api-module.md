@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: Tumblr API Module
 created: 1240531735
 disqus_id: node/20
-category: drupal
+category: blog
+tags: drupal
 ---
 Today I took over the <a href="http://drupal.org/project/tumblr">Tumblr API</a> module from the <a href="http://drupal.org/user/16496">Jeff Eaton</a>. Jeff had done some initial work on building a pretty solid API to interact with <a href="http://www.tumblr.com/api">Tumblr's API</a>, but never got around to doing any more with it. I did some work that I was going to offer as a patch, but Jeff decided to just let me run with the module.
 

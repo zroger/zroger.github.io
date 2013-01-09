@@ -1,0 +1,139 @@
+// Import variables to get around loading-order issues.
+@import "./variables.less";
+
+body {
+  background: url(http://subtlepatterns.com/patterns/furley_bg.png);
+}
+
+@media (min-width: @navbarCollapseDesktopWidth) {
+  body {
+    padding-top: 80px;
+  }
+}
+
+#pageFooter {
+  padding: 40px 0;
+  margin-top: 40px;
+  border-top: 1px solid @grayDarker;
+  background-color: @grayDark;
+  color: @grayLight;
+}
+
+.post {
+  background: #fff;
+  margin: 40px auto;
+
+  .inner {
+    padding: 40px @gridColumnWidth;
+  }
+
+  footer {
+    background: @grayLighter;
+    color: @gray;
+    padding: 10px @gridColumnWidth;
+
+    a {
+      color: @gray;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+  h2 a {
+    color: @grayDarker;
+  }
+}
+
+#resume {
+  background: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#resume .page-header h1 {
+  color: #222;
+  font-size: 72px;
+  line-height: 1em;
+  text-align: center;
+}
+#resume blockquote.intro {
+  border: 0;
+  color: @grayLight;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.resume-section {
+  margin: 40px auto;
+
+  h2 {
+    border-bottom: solid 1px @grayLighter;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 1.1;
+/*    margin-bottom: 0;*/
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  section {
+    padding-bottom: 19px;
+    border-bottom: solid 1px @grayLighter;
+    margin-bottom: 20px;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  .employer {
+    .info {
+      margin-top: 10px;
+    }
+  }
+}
+
+#skills {
+  li {
+    border-bottom: solid 1px @grayLighter;
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: @gridColumnWidth;
+    padding-right: @gridColumnWidth;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding-left: @gridGutterWidth;
+    padding-right: @gridGutterWidth;
+  }
+
+  #resume .page-header h1 {
+    font-size: 36px;
+  }
+
+  #resume p.lead {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+

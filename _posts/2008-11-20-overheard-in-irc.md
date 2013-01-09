@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: Overheard in IRC
 created: 1227205694
 disqus_id: node/10
-category: random
+category: blog
+tags: misc
 ---
 <blockquote>
   <p>

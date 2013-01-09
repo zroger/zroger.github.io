@@ -1,9 +1,10 @@
---- 
+---
 layout: post
 title: Is it Drupal?  Firefox Extension
 created: 1256619129
 disqus_id: node/29
-category: drupal
+category: blog
+tags: drupal
 ---
 While discussing the news about <a href="http://whitehouse.gov">Whitehouse.gov</a> moving to Drupal at work today, I had an idea to create a bookmarklet to help me figure out whether the site I am browsing is indeed a Drupal site or not.  Then at lunch, <a href="http://shalosophy.com/">Shawn </a>(<a href="http://twitter.com/shalosophy">@shalosophy</a>) had a great idea that this should be made into a firefox extension.  And so was born the "Is it Drupal?" Firefox Extension.
 

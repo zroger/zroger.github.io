@@ -3,7 +3,7 @@ layout: master
 description: Musings about web technology, food and cocktails by Roger López.
 ---
 <div class="post-list">
-{% for post in site.posts %}
+{% for post in site.categories.blog %}
   {% include article.html %}
 {% endfor %}
 </div>
