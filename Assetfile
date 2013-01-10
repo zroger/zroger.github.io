@@ -1,4 +1,6 @@
+$:.unshift(File.expand_path("../lib", __FILE__))
 require 'rake-pipeline-web-filters'
+require 'zroger/rake-pipeline/resize_filter'
 
 output "assets"
 
@@ -26,5 +28,21 @@ input "_assets" do
     end
   end
 
+  # First create a copy for each resizing preset.
+  match "photos/*.jpg" do
+    copy do |input|
+      ["teaser", "content"].collect do |x|
+        File.join("photos", x, File.basename(input))
+      end
+    end
+  end
+
+  match "photos/teaser/*.jpg" do
+    resize_image 724, 320, :method => "resize_to_fill"
+  end
+
+  match "photos/content/*.jpg" do
+    resize_image 724, '', :method => "resize_to_fit"
+  end
 end
 

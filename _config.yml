@@ -11,30 +11,11 @@ exclude:
   - Gemfile.lock
   - assets/css/lib
   - bin
+  - lib
+  - tmp
+  - config
+  - Assetfile
+  - Capfile
 category_dir: topics
 tag_dir: tags
 disqus_shortname: zroger
-
-mini_magick:
-  teaser:
-    source: img/photos/original
-    destination: img/photos/teaser
-    resize: "724"
-    gravity: "Center"
-    extent: "724x320"
-  content:
-    source: img/photos/original
-    destination: img/photos/content
-    resize: "724"
-  tablet:
-    source: img/photos/original
-    destination: img/photos/tablet
-    resize: "508"
-  mobile_landscape:
-    source: img/photos/original
-    destination: img/photos/mobile_landscape
-    resize: "420"
-  mobile_portrait:
-    source: img/photos/original
-    destination: img/photos/mobile_landscape
-    resize: "300"
