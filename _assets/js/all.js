@@ -1,8 +1,3 @@
----
----
-{% include bootstrap/js/bootstrap-modal.js %}
-{% include google-code-prettify/prettify.js %}
-
 ;((function($){
   $(window).load(function() {
     

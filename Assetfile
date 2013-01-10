@@ -1,0 +1,30 @@
+require 'rake-pipeline-web-filters'
+
+output "assets"
+
+input "_assets" do
+  match "css/*.less" do
+    less
+  end
+
+  js = [
+    "vendor/bootstrap/js/bootstrap-modal.js",
+    "vendor/google-code-prettify/prettify.js",
+    "js/all.js"
+  ]
+  js_pattern = Regexp.new("(" + js.collect{|x| Regexp.escape(x)}.join('|') + ")")
+
+  match js_pattern do
+    concat js, "js/all.js"
+    uglify
+  end
+
+  match "vendor/bootstrap/img/*" do
+    copy do |input|
+      directory = File.dirname(input)
+      "img/#{File.basename(input)}"
+    end
+  end
+
+end
+

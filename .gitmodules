@@ -1,6 +1,6 @@
 [submodule "_plugins/zroger"]
   path = _plugins/zroger
   url = git://github.com/zroger/jekyll-plugins.git
-[submodule "_includes/bootstrap"]
-  path = _includes/bootstrap
+[submodule "_assets/vendor/bootstrap"]
+  path = _assets/vendor/bootstrap
   url = https://github.com/twitter/bootstrap
