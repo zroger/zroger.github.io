@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<h2>Latest posts</h2>
+{% for post in site.posts %}
+  {% include excerpt.html post=post %}
+  {% unless forloop.last %}<hr>{% endunless %}
+{% endfor %}

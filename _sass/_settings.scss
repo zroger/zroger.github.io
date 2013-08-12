@@ -1,0 +1,19 @@
+@import "settings.default";
+@import "solarized";
+
+$body-font-color: $solarized-base00;
+
+$primary-color: $solarized-blue;
+$secondary-color: $solarized-cyan;
+$alert-color: $solarized-red;
+$success-color: $solarized-green;
+
+$header-font-family: 'Source Sans Pro', sans-serif;
+$header-font-weight: 400;
+$header-font-color: $solarized-base01;
+
+$h1-font-size: emCalc(72);
+
+$code-font-family: 'Source Code Pro', Courier, monospace;
+$code-font-weight: 300;
+

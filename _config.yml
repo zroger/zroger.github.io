@@ -1,0 +1,14 @@
+name: zroger/jekyll-starter
+markdown: redcarpet
+permalink: /:title
+exclude:
+  - "bin"
+  - "*.rb"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "Procfile"
+
+# match github pages config.
+# safe: true
+lsi: false
+pygments: true

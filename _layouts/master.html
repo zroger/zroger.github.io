@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/stylesheets/app.css">
+  <script src="/assets/javascripts/vendor/custom.modernizr.js"></script>
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+
+{{ content }}
+
+<a href="https://github.com/zroger/jekyll-starter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+  <script>
+  document.write('<script src=/assets/javascripts/vendor/' +
+    ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>')
+  </script>
+  <script src="/assets/javascripts/foundation.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+
+{% if site.watch %}
+<script type="text/javascript">
+  console.log("Site generated at %s", "{{ site.time | date: %c }}");
+  console.log("site: %O", {{ site | json }});
+  console.log("page: %O", {{ page | json }});
+</script>
+{% endif %}
+
+</body>
+</html>
