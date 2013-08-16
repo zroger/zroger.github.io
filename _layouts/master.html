@@ -27,6 +27,9 @@
   console.log("Site generated at %s", "{{ site.time | date: %c }}");
   console.log("site: %O", {{ site | json }});
   console.log("page: %O", {{ page | json }});
+  {% if paginator %}
+    console.log("paginator: %O", {{ paginator | json }});
+  {% endif %}
 </script>
 {% endif %}
 

@@ -1,6 +1,5 @@
 name: zroger/jekyll-starter
 markdown: redcarpet
-permalink: /:title
 exclude:
   - "bin"
   - "*.rb"
@@ -9,7 +8,15 @@ exclude:
   - "Procfile"
 baseurl: /jekyll-starter
 
+# Blog post settings
+permalink: /blog/:title
+paginate: 10
+paginate_path: "blog/page:num"
+
+# Allow unsafe plugins in development.  Take care to not depend on these being
+# available when published to gh-pages.
+safe: false
+
 # match github pages config.
-# safe: true
 lsi: false
 pygments: true
