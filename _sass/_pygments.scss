@@ -16,11 +16,9 @@
         .cp { color: $solarized-base01; font-style: italic } /* Comment.Preproc */
         .c1 { color: $solarized-base01; font-style: italic } /* Comment.Single */
         .cs { color: $solarized-base01; font-style: italic } /* Comment.Special */
-        .gd { color: $solarized-base0 } /* Generic.Deleted */
         .ge { color: $solarized-base0 } /* Generic.Emph */
         .gr { color: $solarized-base0 } /* Generic.Error */
         .gh { color: $solarized-base0 } /* Generic.Heading */
-        .gi { color: $solarized-base0 } /* Generic.Inserted */
         .go { color: $solarized-base0 } /* Generic.Output */
         .gp { color: $solarized-base0 } /* Generic.Prompt */
         .gs { color: $solarized-base0 } /* Generic.Strong */
@@ -57,11 +55,9 @@
         .cp { color: $solarized-base1 } /* Comment.Preproc */
         .c1 { color: $solarized-base1 } /* Comment.Single */
         .cs { color: $solarized-base1 } /* Comment.Special */
-        .gd { color: $solarized-base00 } /* Generic.Deleted */
         .ge { color: $solarized-base00 } /* Generic.Emph */
         .gr { color: $solarized-base00 } /* Generic.Error */
         .gh { color: $solarized-base00 } /* Generic.Heading */
-        .gi { color: $solarized-base00 } /* Generic.Inserted */
         .go { color: $solarized-base00 } /* Generic.Output */
         .gp { color: $solarized-base00 } /* Generic.Prompt */
         .gs { color: $solarized-base00 } /* Generic.Strong */
@@ -127,4 +123,6 @@
     .vg { color: $solarized-blue } /* Name.Variable.Global */
     .vi { color: $solarized-blue } /* Name.Variable.Instance */
     .il { color: $solarized-cyan } /* Literal.Number.Integer.Long */
+    .gi { color: $solarized-green } /* General.inserted */
+    .gd { color: $solarized-red } /* General.deleted */
 }
