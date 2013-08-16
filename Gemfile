@@ -14,4 +14,4 @@ gem 'kramdown',   '=1.0.2'
 gem 'zurb-foundation'
 gem 'foreman'
 gem 'compass'
-
+gem 'faker'

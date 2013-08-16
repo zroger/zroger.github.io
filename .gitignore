@@ -2,3 +2,4 @@ _site
 bin
 .sass-cache
 .bundle
+_posts/test
