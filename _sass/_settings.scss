@@ -9,7 +9,7 @@ $alert-color: $solarized-red;
 $success-color: $solarized-green;
 
 $header-font-family: 'Source Sans Pro', sans-serif;
-$header-font-weight: 400;
+$header-font-weight: 300;
 $header-font-color: $solarized-base01;
 
 $h1-font-size: emCalc(72);
@@ -17,3 +17,35 @@ $h1-font-size: emCalc(72);
 $code-font-family: 'Source Code Pro', Courier, monospace;
 $code-font-weight: 300;
 
+$row-width: emCalc(640);
+
+
+// Support for social foundicons icon font.
+$fontFileName: "../fonts/social_foundicons";
+$fontName: "SocialFoundicons";
+$classPrefix: "foundicon-";
+
+@mixin i-class($name,$pua) {
+  .#{$classPrefix}#{$name}:before {
+    content: "\f#{$pua}";
+  }
+}
+
+@mixin ie-class($name,$pua) {
+  .#{$classPrefix}#{$name} {
+    *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = "&#xf#{$pua};");
+  }
+}
+
+@mixin face {
+  @font-face {
+    font-family: $fontName;
+    src: url('#{$fontFileName}.eot');
+    src: url('#{$fontFileName}.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontFileName}.woff') format('woff'),
+         url('#{$fontFileName}.ttf') format('truetype'),
+         url('#{$fontFileName}.svg##{$fontName}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

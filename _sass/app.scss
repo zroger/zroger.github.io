@@ -56,6 +56,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700);
+@import "social_foundicons";
 
 // Solarized color variables
 @import "solarized";
@@ -99,4 +100,31 @@ p img {
     padding: 5px;
     border: solid 1px #999;
 
+}
+
+header {
+    h1 {
+        text-align: center;
+    }
+}
+
+footer {
+    dl.sub-nav {
+        line-height: emCalc(32);
+    }
+    i[class*="foundicon-"] {
+        font-size: emCalc(32);
+        vertical-align: middle;
+    }
+}
+
+
+figure {
+    margin-bottom: $paragraph-margin-bottom;
+}
+figcaption {
+    font-size: emCalc(12);
+    font-style: italic;
+    text-align: center;
+    margin-top: emCalc(6);
 }
