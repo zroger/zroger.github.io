@@ -3,7 +3,7 @@ layout: post
 title: Snorkeling in Cancun
 category: photos
 photo: cancun-snorkeling.jpg
-comments: true
+comments: false
 ---
 
 Monique took this picture while snorkeling off a catamaran in Cancun, Mexico,

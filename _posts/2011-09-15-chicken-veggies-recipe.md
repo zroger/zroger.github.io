@@ -3,7 +3,7 @@ layout: post
 title: Chicken and Veggies
 category: recipes
 comments: false
-published: true
+published: false
 ---
 
 I just threw this one together, and it turned out pretty good.
@@ -11,7 +11,7 @@ I just threw this one together, and it turned out pretty good.
 <!-- break -->
 <div class="item-list" markdown="1">
 ### Ingredients:
-  
+
 - Boneless, skinless chicken thighs
 - 4 Roma tomatoes
 - 1 yellow onion
