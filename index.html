@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panel">
+            <h2>Hello.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <h2>Recent posts</h2>
+        {% for post in site.posts limit:3 %}
+            <article>
+                <h6 class="subheader">{{ post.date | date:"%B %-d %Y" }}</h6>
+                <h3>
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                </h3>
+            </article>
+        {% endfor %}
+    </div>
+</div>
