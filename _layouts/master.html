@@ -25,10 +25,10 @@
 {% if site.watch %}
 <script type="text/javascript">
   console.log("Site generated at %s", "{{ site.time | date: %c }}");
-  console.log("site: %O", {{ site | json }});
-  console.log("page: %O", {{ page | json }});
+  console.log("site: %O", {{ site | json | replace:'</script>','<\/unscript>' }});
+  console.log("page: %O", {{ page | json | replace:'</script>','<\/unscript>' }});
   {% if paginator %}
-    console.log("paginator: %O", {{ paginator | json }});
+    console.log("paginator: %O", {{ paginator | json | replace:'</script>','<\/unscript>' }});
   {% endif %}
 </script>
 {% endif %}

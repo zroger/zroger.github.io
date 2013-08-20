@@ -1,4 +1,4 @@
-name: zroger/jekyll-starter
+name: Roger López
 markdown: redcarpet
 exclude:
   - "bin"
@@ -6,7 +6,7 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "Procfile"
-baseurl: /jekyll-starter
+baseurl: ""
 
 # Blog post settings
 permalink: /blog/:title
