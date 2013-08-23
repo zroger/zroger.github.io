@@ -75,14 +75,19 @@ First things first.  Set the ServerName to localhost, listen on port 8080 and
 stash the pid and lock files in ./tmp.  Apache will not create the tmp directory,
 so either make sure this directory exists or choose another location.
 
-Next we need to enable a minimal set of modules.  mod\_authz\_host provides the `allow`,
-`deny` and `order` directives.  mod_dir provides the `DirectoryIndex` directive.
-`mod_mime` provides automatic mime content type headers.  mod\_log\_config provides
-the `CustomLog` and `LogFormat` directives.  mod\_rewrite and mod\_php are
-application specific, so leave them out if you don't need them.
+Next we need to enable a minimal set of modules.
 
-Now we set up the logging.  The only thing special here is that we pipe all of
-the logs to `cat`, which will print all of the logs to the console.
+* `mod_authz_host` provides the `allow`, `deny` and `order` directives.
+* `mod_dir` provides the `DirectoryIndex` directive.
+* `mod_mime` provides automatic mime content type headers.
+* `mod\_log\_config` provides the `CustomLog` and `LogFormat` directives.
+* `mod\_rewrite` and `mod\_php` are application specific, so leave them out if
+  you don't need them.
+
+To get the logs printed to the console, we use Apache's
+[piped log](http://httpd.apache.org/docs/2.2/logs.html#piped) format to pipe the
+log output to `cat`, which will print all of the logs to the console instead of
+stashing them in a file.
 
 Finally, we set up the DocumentRoot.  My project is built into `build/html` so
 that's what I'm using here.  Change this to whatever suits your project.  Since
@@ -100,6 +105,7 @@ I'm calling Feather to wrap this process into something nicer which can be
 included with Composer.
 
 2. At the time, I'm still primarily running PHP 5.3 to match the production
-version of the most of the projects.  I'll be investigating the use of PHP 5.4's
-built-in webserver at some point.  Nonetheless, it's still nice to have full use
-of `.htaccess` in my local environment.
+version of some projects.  I'll be investigating the use of PHP 5.4's built-in
+webserver at some point.  Nonetheless, it's still nice to have full use of
+Apache in my local environment, especially for projects like Drupal that make
+use of a `.htaccess` file.
