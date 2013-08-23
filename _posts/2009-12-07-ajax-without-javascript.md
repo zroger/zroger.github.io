@@ -1,9 +1,11 @@
---- 
+---
 layout: post
 title: Ajax without Javascript
 created: 1260242191
 disqus_id: node/30
-category: drupal
+categories:
+  - drupal
+  - featured
 ---
 Ajax is nothing new. And especially since Drupal's adoption of <a href="http://jquery.com">jQuery</a>, ajax has certainly become much easier. Generally, ajax requests in Drupal involve
 
@@ -30,7 +32,7 @@ The first thing that is needed is a hook_menu() implementation to define two new
   <figcaption>example.module, part 1</figcaption>
 {% highlight php %}
 <?php
-/** 
+/**
  * Implementation of hook_menu().
  */
 function example_menu() {
@@ -45,7 +47,7 @@ function example_menu() {
     'page arguments' => array(1),
     'access arguments' => array('access content'),
   );
-  return $items;   
+  return $items;
 }
 ?>
 {% endhighlight %}
