@@ -153,3 +153,7 @@ figcaption {
 .light {
     color: lighten($body-font-color, 50%);
 }
+
+ul, ol {
+    margin-left: 2em;
+}
