@@ -6,8 +6,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/app.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/app.css?{{ site.time | date:'%j%H%M%S' }}">
   <script src="{{ site.baseurl }}/assets/javascripts/vendor/custom.modernizr.js"></script>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 </head>
 <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 
@@ -17,7 +18,7 @@
   document.write('<script src={{ site.baseur l}}/assets/javascripts/vendor/' +
     ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>')
   </script>
-  <script src="{{ site.baseurl }}/assets/javascripts/foundation.js"></script>
+  <script src="{{ site.baseurl }}/assets/javascripts/foundation.js?{{ site.time | date:'%j%H%M%S' }}"></script>
   <script>
     $(document).foundation();
   </script>

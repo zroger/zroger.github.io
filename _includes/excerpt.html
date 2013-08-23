@@ -2,4 +2,7 @@
   <h6 class="subheader">{{ post.date | date: "%d %b %Y" }}</h6>
   <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
   {{ post.excerpt | markdownify }}
+  <ul class="inline-list">
+    <li><a href="{{ site.baseurl }}{{ post.url }}">Continue reading &raquo;</a></li>
+  </ul>
 </article>

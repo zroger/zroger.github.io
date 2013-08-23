@@ -4,7 +4,7 @@ layout: master
   <header><div class="row">
     <div class="large-12 columns">
       <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-      <hr />
+      <hr>
     </div>
   </div></header>
 
@@ -12,7 +12,7 @@ layout: master
 
   <div class="row">
     <!-- Main Blog Content -->
-    <div class="large-12 columns" role="content">
+    <div class="large-10 large-centered columns" role="content">
       {{ content }}
     </div>
     <!-- End Main Content -->
@@ -28,6 +28,8 @@ layout: master
       <hr />
       <dl class="sub-nav right">
         <dt>&copy; {{ site.time | date: "%Y" }} Roger López</dt>
+        <dd><a href="{{ site.baseurl }}/feed.xml" title="RSS Feed">
+          <i class="foundicon-rss"></i></a></dd>
         <dd><a href="http://github.com/zroger" title="Github">
           <i class="foundicon-github"></i></a></dd>
         <dd><a href="http://twitter.com/zroger" title="Twitter">

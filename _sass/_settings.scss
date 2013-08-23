@@ -1,24 +1,24 @@
 @import "settings.default";
-@import "solarized";
+// @import "solarized";
 
-$body-font-color: $solarized-base00;
+// $body-font-color: $solarized-base00;
 
-$primary-color: $solarized-blue;
-$secondary-color: $solarized-cyan;
-$alert-color: $solarized-red;
-$success-color: $solarized-green;
+// $primary-color: $solarized-blue;
+// $secondary-color: $solarized-cyan;
+// $alert-color: $solarized-red;
+// $success-color: $solarized-green;
 
 $header-font-family: 'Source Sans Pro', sans-serif;
 $header-font-weight: 300;
-$header-font-color: $solarized-base01;
+// $header-font-color: $solarized-base01;
 
 $h1-font-size: emCalc(72);
 
 $code-font-family: 'Source Code Pro', Courier, monospace;
-$code-font-weight: 300;
+$code-font-weight: 400;
+$keystroke-font: $code-font-family;
 
-$row-width: emCalc(640);
-
+$row-width: emCalc(800);
 
 // Support for social foundicons icon font.
 $fontFileName: "../fonts/social_foundicons";

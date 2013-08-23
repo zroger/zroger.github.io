@@ -1,5 +1,5 @@
 name: Roger López
-markdown: redcarpet
+markdown: maruku
 exclude:
   - "bin"
   - "*.rb"

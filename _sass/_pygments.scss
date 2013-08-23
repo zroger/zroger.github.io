@@ -4,6 +4,7 @@
     @if $style == dark {
         background: $solarized-base03;
         color: $solarized-base0;
+         code { color: $solarized-base0 }
         .hll { background-color: $solarized-base2 }
         .c { color: $solarized-base01; font-style: italic } /* Comment */
         .g { color: $solarized-base0 } /* Generic */
@@ -43,6 +44,7 @@
     } @else {
          background: $solarized-base3;
          color: $solarized-base00;
+         code { color: $solarized-base00 }
         .hll { background-color: $solarized-base02 }
         .c { color: $solarized-base1 } /* Comment */
         .g { color: $solarized-base00 } /* Generic */
