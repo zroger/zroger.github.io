@@ -1,10 +1,10 @@
 ---
-layout: master
+layout: default
 title: About this site
 ---
 
-<div class="eyebrow">Behind the curtain</div>
-# About the site
+<h6 class="subheader">Behind the curtain</h6>
+## About the site
 
 This site is not a Drupal site.  Why not, you ask?  Well, here goes.
 
@@ -17,7 +17,7 @@ This site is not a Drupal site.  Why not, you ask?  Well, here goes.
 * Not that my site gets a ton of traffic, but my tiny VPS can now handle much
   more traffic since its all static.
 
-## Components
+### Components
 
 * [__Jekyll__](https://github.com/mojombo/jekyll) <br/>
   Jekyll is a blog-aware, static site generator in Ruby.
@@ -29,7 +29,7 @@ This site is not a Drupal site.  Why not, you ask?  Well, here goes.
   Jekyll has a very simple plugin scheme.  I've borrowed and modified several
   from Jose.
 * [__LessCSS__](http://lesscss.org/) <br />
-  Less CSS makes writing CSS much more enjoyable.  I am using the Less 
-  [gem](http://rubygems.org/gems/less) along with a Jekyll converter.  The 
+  Less CSS makes writing CSS much more enjoyable.  I am using the Less
+  [gem](http://rubygems.org/gems/less) along with a Jekyll converter.  The
   converter was first found [here](https://gist.github.com/639920) and then
   modified to work with the current version of the gem (2.0.5).
