@@ -6,7 +6,7 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "Procfile"
-baseurl: ""
+baseurl: "http://zroger.com"
 include:
   - _redirects
 relative_permalinks: false
