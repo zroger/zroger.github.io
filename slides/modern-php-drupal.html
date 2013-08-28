@@ -1,0 +1,521 @@
+---
+layout: presentation
+title: Modern PHP & Drupal
+theme: solarized
+permalink: /slides/modern-php-drupal/index.html
+---
+
+<style type="text/css">
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-transform: none;
+}
+</style>
+
+<section>
+    <h1>Modern PHP</h1>
+    <h2>Roger López</h2>
+</section>
+
+<section>
+    <section>
+        <h1>Drupal & PHP</h1>
+    </section>
+    <section>
+        <h2>Drupal: PHP Requirements</h2>
+        <ul>
+            <li>
+                <h3>Drupal 6</h3>
+                <ul>
+                    <li>PHP >= 4.4.0, 5.2 recommended</li>
+                    <li>5.3 compatibility issues in contrib</li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                <h3>Drupal 7</h3>
+                <ul>
+                    <li>PHP >= 5.2.5, 5.3 recommended</li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                <h3>Drupal 8</h3>
+                <ul>
+                    <li>PHP >= 5.3.10</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h1>PHP 5.4 & 5.5</h1>
+        <h2>New Language Features</h2>
+    </section>
+
+    <section>
+        <h2>Traits: Cross-cutting concerns</h2>
+        <pre class="stretch"><code data-trim>
+trait Loggable {
+    public function log($message, $level = 'info') {
+        printf("[%s] %s\n", $level, $message);
+    }
+}
+
+class Database {
+    use Loggable;
+
+    function connect() {
+        $this->log('Connected to database...');
+    }
+}
+
+class Mailer {
+    use Loggable;
+
+    function send() {
+        $this->log('Mail sent...');
+    }
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Traits: Multiple inheritance</h2>
+        <pre><code data-trim>
+class Animal {
+    public function eat() {}
+}
+
+class Mammal < Animal {
+    public function breath() {}
+}
+
+class WingedAnimal < Animal {
+    public function flap() {}
+}
+
+class Bat < Animal {
+    use WingedAnimal;
+    use Mammal;
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Array syntax additions (5.4)</h2>
+        <pre><code data-trim>
+// Short syntax.
+$a = [1, 2, 3];
+$b = ['foo' => 1, 'bar' => 3];
+
+// Function dereferencing.
+$foo = bar()[0];
+$image = field_get_items('node', $node, 'field_image')[0];
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Built-in web server (5.4)</h2>
+        <pre class="stretch language-bash"><code data-trim>
+$ cd ~/public_html
+$ php -S localhost:8000
+PHP 5.4.0 Development Server started at Thu Jul 21 10:43:28 2011
+Listening on localhost:8000
+Document root is /home/me/public_html
+Press Ctrl-C to quit.
+[Thu Jul 21 10:48:48 2011] ::1:39144 GET /favicon.ico - Request read
+[Thu Jul 21 10:48:50 2011] ::1:39146 GET / - Request read
+[Thu Jul 21 10:48:50 2011] ::1:39147 GET /favicon.ico - Request read
+[Thu Jul 21 10:48:52 2011] ::1:39148 GET /myscript.html - Request read
+[Thu Jul 21 10:48:52 2011] ::1:39149 GET /favicon.ico - Request read
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Generators (5.5)</h2>
+        <pre><code data-trim>
+function getLines($file) {
+    $f = fopen($file, 'r');
+    try {
+        while ($line = fgets($f)) {
+            yield $line;
+        }
+    } finally {
+        fclose($f);
+    }
+}
+
+foreach (getLines("file.txt") as $n => $line) {
+    echo $line;
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Password Hashing API (5.5)</h2>
+        <pre><code data-trim>
+// Securely create a password hash with cost of 12.
+// Hash will look like:
+//   $2y$12$QjSH496pcT5CEbzjD/vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K
+$hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
+
+// Verify a password matches the hash.
+// The algorithm, salt and cost are all included in the hash string,
+// so no other arguments are required.
+$valid = password_verify ($password, $hash);
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Syntax updates (5.5)</h2>
+        <pre><code data-trim>
+// Array unpacking in foreach loops.
+$coords = [ [1, 2], [3, 4], [5, 6] ];
+foreach ($coords as list($x, $y)) {
+    printf("x: %d, y: %d\n", $x, $y);
+}
+
+// Using empty with expressions instead of variables.
+if (empty(trim($input))) {
+    // This used to throw a PHP Fatal error:
+    // Can't use function return value in write context.
+}
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>Composer & Packagist</h1>
+    </section>
+
+    <section>
+        <h2>Composer: Dependency management</h2>
+        <pre><code data-trim>
+{
+    "require": {
+        "behat/behat": "2.4.*@stable",
+        "drupal/drupal-extension": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin"
+    }
+}
+        </code></pre>
+        <p><code>composer.json</code></p>
+    </section>
+
+    <section>
+        <h2>Composer: Directory Structure</h2>
+        <pre class="stretch language-bash"><code data-trim>
+├── bin
+│   ├── behat -> ../vendor/behat/behat/bin/behat
+│   └── webunit -> ../vendor/instaclick/php-webdriver/bin/webunit
+├── composer.json
+├── composer.lock
+└── vendor
+    ├── autoload.php
+    ├── behat
+    ├── composer
+    ├── drupal
+    │   └── drupal-extension
+    │       ├── README.md
+    │       ├── behat.yml.dist
+    │       ├── composer.json
+    │       ├── features
+    │       └── src
+    ├── fabpot
+    ├── guzzle
+    ├── instaclick
+    └── symfony
+        </code></pre>
+    </section>
+    <section>
+        <h2>packagist.org</h2>
+        <img src="https://api.monosnap.com/image/download?id=DlqrGflDBcIj03k87exOj854V">
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>psr/log</h1>
+        <h2>PSR-3: Logger Interface</h2>
+    </section>
+    <section>
+        <h2>psr/log: LoggerInterface</h2>
+        <pre class="stretch"><code data-trim>
+use Psr\Log\LoggerInterface;
+
+class Foo
+{
+    private $logger;
+
+    public function __construct(LoggerInterface $logger = null)
+    {
+        $this->logger = $logger;
+    }
+
+    public function doSomething()
+    {
+        if ($this->logger) {
+            $this->logger->info('Doing work');
+        }
+
+        // do something useful
+    }
+}
+        </code></pre>
+    </section>
+    <section>
+        <h2>psr/log: NullLogger</h2>
+        <pre class="stretch"><code data-trim>
+use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\NullLogger;
+
+class Foo implements LoggerAwareInterface
+{
+    use LoggerAwareTrait;
+
+    public function __construct(LoggerInterface $logger = null)
+    {
+        $this->setLogger(isset($logger) ? $logger : new NullLogger());
+    }
+
+    public function doSomething()
+    {
+        $this->logger->info('Doing work');
+
+        // do something useful
+    }
+}
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>monolog/monolog</h1>
+        <h2>PSR-3 Logger implementation</h2>
+    </section>
+    <section>
+        <h2>monolog: Handlers</h2>
+        <ul>
+            <li><strong>File system:</strong> stream, rotating file, syslog, error log</li>
+            <li><strong>Alerts:</strong> email, swift mailer, HipChat,
+                Push notifications via Pushover API</li>
+            <li><strong>Network:</strong> sockets, AMQP, Graylog2, NewRelic</li>
+            <li><strong>Browser:</strong> FirePHP, ChromePHP</li>
+            <li><strong>Database:</strong> Redis, Mongo, Couch</li>
+        </ul>
+    </section>
+    <section>
+        <h2>monolog: Example</h2>
+        <pre class="stretch"><code data-trim>
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
+use Monolog\Handler\HipChatHandler;
+
+// Create the logger
+$logger = new Logger('my_logger');
+
+// Now add some handlers
+$logger->pushHandler(new HipChatHandler($token, $room, 'App Logger', false,
+    Logger::CRITICAL, true));
+$logger->pushHandler(new StreamHandler(__DIR__.'/my_app.log',
+    Logger::DEBUG, true));
+$logger->pushHandler(new FirePHPHandler(Logger::DEBUG, true));
+
+// You can now use your logger
+$logger->addInfo('My logger is now ready');
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>symfony/console</h1>
+    </section>
+
+    <section>
+        <h2>symfony/console</h2>
+        <pre class="stretch"><code data-trim>
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
+$console = new Application();
+
+$console
+    ->register('ls')
+    ->setDefinition(array(
+        new InputArgument('dir', InputArgument::REQUIRED, 'Directory name'),
+    ))
+    ->setDescription('Displays the files in the given directory')
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
+        $dir = $input->getArgument('dir');
+
+        $output->writeln(sprintf('Dir listing for <info>%s</info>', $dir));
+    });
+
+$console->run();
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>silex/silex</h1>
+        <h2>PHP micro-framework</h2>
+    </section>
+
+    <section>
+        <h2>silex: Example</h2>
+        <pre class="stretch"><code data-trim>
+// web/index.php
+require_once __DIR__.'/../vendor/autoload.php';
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+$app = new Silex\Application();
+
+$app->get('/blog/{id}', function (Silex\Application $app, $id) {
+    $post = find_blog_by_id($id);
+    if (empty($post)) {
+        $app->abort(404, "Post $id does not exist.");
+    }
+
+    return  "<h1>{$post['title']}</h1>".
+            "<p>{$post['body']}</p>";
+});
+
+$app->post('/feedback', function (Request $request) {
+    $message = $request->get('message');
+    mail('feedback@yoursite.com', '[YourSite] Feedback', $message);
+
+    return new Response('Thank you for your feedback!', 201);
+});
+
+$app->run();
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1>react/react</h1>
+        <h2>Nuclear Reactor written in PHP.</h2>
+    </section>
+
+    <section>
+        <h2>React</h2>
+        <ul>
+            <li>Event-driven, non-blocking I/O with PHP.</li>
+            <li>Flexible event loop.
+                <ul>
+                    <li>Stream Select (default), based on `select` system call.</li>
+                    <li>libevent pecl extension, supports epoll and kqueue backends.</li>
+                    <li>libev pecl extension, also supports epoll and kqueue.</li>
+                </ul>
+            </li>
+            <li>Loop features:
+                <ul>
+                    <li>File descriptor polling</li>
+                    <li>One-off timers</li>
+                    <li>Periodic timers</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>React: webserver</h2>
+        <pre class="stretch"><code data-trim>
+require 'vendor/autoload.php';
+
+$app = function ($request, $response) {
+    $response->writeHead(200, array('Content-Type' => 'text/plain'));
+    $response->end("Hello World\n");
+};
+
+$loop = React\EventLoop\Factory::create();
+$socket = new React\Socket\Server($loop);
+$http = new React\Http\Server($socket, $loop);
+
+$http->on('request', $app);
+echo "Server running at http://127.0.0.1:1337\n";
+
+$socket->listen(1337);
+$loop->run();
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>React: Parallel Download</h2>
+        <pre class="stretch"><code data-trim>
+require __DIR__.'/../vendor/autoload.php';
+
+$loop = React\EventLoop\Factory::create();
+
+$files = array(
+    'node-v0.6.18.tar.gz' => 'http://nodejs.org/dist/v0.6.18/node-v0.6.18.tar.gz',
+    'php-5.4.3.tar.gz' => 'http://it.php.net/get/php-5.4.3.tar.gz/from/this/mirror',
+);
+
+$buffers = array();
+
+foreach ($files as $file => $url) {
+    $readStream = fopen($url, 'r');
+    $writeStream = fopen($file, 'w');
+
+    stream_set_blocking($readStream, 0);
+    stream_set_blocking($writeStream, 0);
+
+    $read = new React\Stream\Stream($readStream, $loop);
+    $write = new React\Stream\Stream($writeStream, $loop);
+
+    $read->on('end', function () use ($file, &$files) {
+        unset($files[$file]);
+        echo "Finished downloading $file\n";
+    });
+
+    $read->pipe($write);
+}
+
+$loop->addPeriodicTimer(5, function ($timer) use (&$files) {
+    if (0 === count($files)) {
+        $timer->cancel();
+    }
+
+    foreach ($files as $file => $url) {
+        $mbytes = filesize($file) / (1024 * 1024);
+        $formatted = number_format($mbytes, 3);
+        echo "$file: $formatted MiB\n";
+    }
+});
+
+echo "This script will show the download status every 5 seconds.\n";
+
+$loop->run();
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h1></h1>
+        <h2></h2>
+    </section>
+
+    <section>
+        <h2>Example</h2>
+        <pre class="stretch"><code data-trim>
+        </code></pre>
+    </section>
+</section>
