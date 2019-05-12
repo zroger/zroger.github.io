@@ -1,7 +1,0 @@
-_site
-bin
-.sass-cache
-.bundle
-_posts/test
-accept.lock.*
-httpd.pid
