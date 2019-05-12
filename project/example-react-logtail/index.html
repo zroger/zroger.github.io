@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.5" />
+
+
+<title>Log tailing w/ React &#43; IntersectionObserver - Roger López</title>
+<meta property="og:title" content="Log tailing w/ React &#43; IntersectionObserver - Roger López">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="icon" href="http://zroger.com/images/favicon.png" type="image/x-icon"/>
+<link rel="stylesheet" href="http://zroger.com/css/main.css" media="all">
+<link rel="stylesheet" href="http://zroger.com/css/extra.css" media="all">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400|Lato:400,400italic,700">
+<link rel="stylesheet" href="//cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="http://zroger.com/" class="nav-logo">
+    <img src="http://zroger.com/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://github.com/zroger">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">Log tailing w/ React &#43; IntersectionObserver</h1>
+
+    
+
+    <div class="article-content">
+      <p><i class="devicon-github-plain"></i> <a href="https://github.com/zroger/example-react-logtail">zroger/example-react-logtail</a></p>
+
+<p>This is an example of using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">IntersectionObserver API</a> with React to
+dynamically keep an anchor element scrolled into the viewport, if the anchor
+was visible before the update. In other words, if the bottom of the logs are
+visible, then automatically scroll when new logs come in, but don&rsquo;t scroll if
+the user scrolled away from the bottom.</p>
+
+<p>By combining the IntersectionObserver API with a React component, we can track
+efficiently monitor the scroll position of an anchor element and keep track of
+its visibility in the component&rsquo;s state. When new content is added, we can
+decide whether to scroll based only on the component&rsquo;s state.</p>
+
+    </div>
+  </article>
+
+  
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="http://zroger.com/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="http://zroger.com/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+
