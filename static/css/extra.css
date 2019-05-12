@@ -1,0 +1,9 @@
+.article-content a {
+  border-bottom: solid 2px #3f51b5;
+  box-shadow: inset 0 -2px 0 #e8eaf6;
+}
+
+.article-content a:hover,
+.article-content a:focus {
+  background-color: #e8eaf6;
+}
