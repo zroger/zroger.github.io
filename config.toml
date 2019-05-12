@@ -1,4 +1,4 @@
-baseURL = "http://zroger.com/"
+baseURL = "https://zroger.com/"
 languageCode = "en-us"
 title = "Roger López"
 theme = "lithium"
