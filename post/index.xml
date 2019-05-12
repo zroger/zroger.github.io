@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Roger López</title>
-    <link>http://zroger.com/post/</link>
+    <link>https://zroger.com/post/</link>
     <description>Recent content in Posts on Roger López</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 May 2019 14:19:21 -0400</lastBuildDate>
     
-	<atom:link href="http://zroger.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zroger.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My First Post</title>
-      <link>http://zroger.com/2019/my-first-post/</link>
+      <link>https://zroger.com/2019/my-first-post/</link>
       <pubDate>Sun, 12 May 2019 14:19:21 -0400</pubDate>
       
-      <guid>http://zroger.com/2019/my-first-post/</guid>
+      <guid>https://zroger.com/2019/my-first-post/</guid>
       <description>my first post</description>
     </item>
     

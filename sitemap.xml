@@ -3,40 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://zroger.com/project/example-react-logtail/</loc>
+    <loc>https://zroger.com/project/example-react-logtail/</loc>
     <lastmod>2019-05-12T15:12:23-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://zroger.com/project/</loc>
-    <lastmod>2019-05-12T15:12:23-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://zroger.com/</loc>
+    <loc>https://zroger.com/project/</loc>
     <lastmod>2019-05-12T15:12:23-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://zroger.com/2019/my-first-post/</loc>
+    <loc>https://zroger.com/</loc>
+    <lastmod>2019-05-12T15:12:23-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zroger.com/2019/my-first-post/</loc>
     <lastmod>2019-05-12T14:19:21-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://zroger.com/post/</loc>
+    <loc>https://zroger.com/post/</loc>
     <lastmod>2019-05-12T14:19:21-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://zroger.com/categories/</loc>
+    <loc>https://zroger.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://zroger.com/tags/</loc>
+    <loc>https://zroger.com/tags/</loc>
     <priority>0</priority>
   </url>
   

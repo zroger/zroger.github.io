@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Roger López</title>
-    <link>http://zroger.com/project/</link>
+    <link>https://zroger.com/project/</link>
     <description>Recent content in Projects on Roger López</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 May 2019 15:12:23 -0400</lastBuildDate>
     
-	<atom:link href="http://zroger.com/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zroger.com/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Log tailing w/ React &#43; IntersectionObserver</title>
-      <link>http://zroger.com/project/example-react-logtail/</link>
+      <link>https://zroger.com/project/example-react-logtail/</link>
       <pubDate>Sun, 12 May 2019 15:12:23 -0400</pubDate>
       
-      <guid>http://zroger.com/project/example-react-logtail/</guid>
+      <guid>https://zroger.com/project/example-react-logtail/</guid>
       <description>zroger/example-react-logtail
 This is an example of using the IntersectionObserver API with React to dynamically keep an anchor element scrolled into the viewport, if the anchor was visible before the update. In other words, if the bottom of the logs are visible, then automatically scroll when new logs come in, but don&amp;rsquo;t scroll if the user scrolled away from the bottom.
 By combining the IntersectionObserver API with a React component, we can track efficiently monitor the scroll position of an anchor element and keep track of its visibility in the component&amp;rsquo;s state.</description>
